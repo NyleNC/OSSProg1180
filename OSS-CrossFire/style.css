@@ -181,7 +181,7 @@
 }
 
 .sidebar{
-    height: 100vw;
+    height: 37vw;
     background-color: #173451; 
     color: white;
     padding-top: 20px;
@@ -408,7 +408,7 @@ td, th {
 
 
 
-  /* Sahil's CSS */
+  /* New CSS */
   /* Global Styles */ 
 body {
     display : flex;
@@ -602,8 +602,8 @@ input::-webkit-calendar-picker-indicator {
     }
 }
 
-/* New CSS */
 
+/* Sahil's CSS */
 /* Main elements for forms */
 .create-main {
     padding: 25px 50px; 
@@ -641,7 +641,7 @@ footer {
 .head-top h1 {
     color: #173451; 
     font-size: 22px; 
-    font-weight: bold; /* Closing brace added here */
+    font-weight: bold;
 }
 
 /* Form styles */
@@ -808,7 +808,7 @@ textarea {
     border-radius: 5px; 
     cursor: pointer;
     font-weight: bold; 
-    transition: background-color 0.3s; /* Fixed transition property */
+    transition: background-color 0.3s;
     margin: 5px; 
     background-color: #5897c9; 
     color: white; 
