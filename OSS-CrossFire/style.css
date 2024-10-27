@@ -172,6 +172,7 @@
 .navbar-tools a {
     float: right;
     padding: 3px 6px;
+    text-decoration: none;
 }
 
 .navbar-tools .ddlRole{
