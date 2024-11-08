@@ -589,7 +589,7 @@ body {
 
 /* Input Styles for Date Picker */
 input::-webkit-calendar-picker-indicator {
-opacity: 100;
+    opacity: 100;
 }
 
 /* Focus Styles */
