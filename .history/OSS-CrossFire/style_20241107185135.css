@@ -844,9 +844,9 @@ input:disabled, textarea:disabled, select:disabled {
 }
 /* FAQ CSS*/
 .faq-container {
-    margin: 0 auto;
-    padding-left: 30px;
-    gap:20px;
-}
 
+    margin: 0 auto;
+    padding-left: 50px;
+    text-align: left;
+}
 

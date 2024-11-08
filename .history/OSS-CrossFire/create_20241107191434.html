@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View/Edit NCR</title>
-    
+    <title>CrossFireNCR</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +71,7 @@
 
     <main class="create-main">
         <h1>NCR Details</h1>
-        <p class="edit-p">&nbsp; This page displays the details of an existing NCR form. You can edit the information if necessary.</p>
+        <p class="edit-p">&nbsp; Please fill out the NCR form below and submit it for processing. Required fields are marked with an asterisk (*).</p>
 
         <form id="ncr-form" onsubmit="return validateForm()">
             <fieldset>
@@ -80,97 +79,97 @@
                 
                 <div class="form-ncrNum">
                     <label for="ncrNumber">NCR #:</label>
-                    <span id="ncrNumber">NCR-1234</span>
+                    <span id="ncrNumber">NCR-</span>
                 </div>
                 <div class="form-ncrDate">
                     <label for="ncrDate">NCR Date:</label>
-                    <span id="ncrDate">2024-10-14</span>
+                    <span id="ncrDate"></span>
                 </div><br>
-        
+
                 <div class="lblIdf">
                     <label>Identify Process Applicable:</label>
                 </div>
                 <div class="form-ipa1">
-                    <input id="ncrSor" name="processApplicable" type="radio" value="supplier" checked disabled>
-                    <label for="ncrSor">Supplier or Receiving Inspection</label>
+                    <input type="radio" id="supp" name="process" value="suppotRec" onclick="enableDisableTextbox(this)">
+                    <label for="supp">Supplier or Receiving Inspection</label><br>
                 </div>
                 <div class="form-ipa2">
-                    <input id="ncrWip" name="processApplicable" type="radio" value="wip" disabled>
-                    <label for="ncrWip">WIP (Production Order)</label>
-                </div><br>
-        
+                    <input type="radio" id="wip" name="process" value="supplier" onclick="enableDisableTextbox(this)">
+                    <label for="wip">WIP (Production Order)</label>
+                </div><br>   
+
                 <div class="form-group">
                     <label for="supplierName">Supplier Name: *</label>
-                    <input type="text" id="supplierName" class="size-css" value="Apex Supply Co." readonly>
+                    <input type="text" id="supplierName" class="size-css" required pattern="[a-zA-Z ]{2,30}" title="Please enter a valid name (letters only).">
                 </div>
-        
+
                 <div class="form-group">
                     <div class="left-side">
                         <label for="ProductNo">PO or Product No.: *</label>
-                        <input type="text" id="ProductNo" value="56784" readonly>
+                        <input type="text" id="ProductNo" required pattern="\d{5}" title="Please enter exactly 5 digits.">
                     </div>
                     <div class="left-side">
                         <label for="SaleOrderNo">Sales Order No.: *</label>
-                        <input type="text" id="SaleOrderNo" value="91014" readonly>
+                        <input type="text" id="SaleOrderNo" required pattern="\d{5}" title="Please enter exactly 5 digits.">
                     </div>
                 </div>
-        
+
                 <div class="form-group">
                     <div class="right-side">
                         <label for="quantityReceived">Quantity Received: *</label>
-                        <input type="number" id="quaRec" value="100" readonly>
+                        <input type="number" id="quantityReceived" required min="1" title="Please enter a valid quantity.">
                     </div>
                     <div class="right-side">
                         <label for="quantityDefective">Quantity Defective: *</label>
-                        <input type="number" id="quaDef" value="5" readonly>
+                        <input type="number" id="quantityDefective" required min="0" title="Please enter a valid quantity.">
                     </div>
                 </div>
-        
+
                 <div class="form-itemDes">
                     <label for="itemDescription">Description of Item (including SAP No.): *</label><br>
-                    <textarea id="itemDes" readonly>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus voluptates quia quis omnis dolorem temporibus explicabo fuga molestiae, autem magnam. Ratione minus voluptas neque qui impedit esse repudiandae hic necessitatibus.</textarea>
+                    <textarea id="itemDescription" required></textarea>
                 </div><br>
-        
+                
                 <div class="form-defDes">
                     <label for="defectDescription">Description of Defect (should be descriptive): *</label><br>
-                    <textarea id="defDes" readonly>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi dolorum facilis quis maxime in ipsa repellendus culpa nulla atque, quam voluptates recusandae dolorem sit alias nesciunt, debitis, adipisci enim autem.</textarea>
+                    <textarea id="defectDescription" required></textarea>
                 </div>
-        
+                
                 <div class="lblImn">
                     <label>Item marked Nonconforming:</label>
                 </div>
                 <div class="form-Yes">
-                    <input id="imnYes" name="nonconforming" type="radio" value="yes" checked disabled>
+                    <input id="imnYes" name="nonconforming" type="radio" value="yes">
                     <label for="imnYes">Yes</label>
                 </div>
                 <div class="form-No">
-                    <input id="imnNo" name="nonconforming" type="radio" value="no" disabled>
+                    <input id="imnNo" name="nonconforming" type="radio" value="no">
                     <label for="imnNo">No</label>
-                </div><br>
-        
+                </div><br>                
+
                 <div class="form-group">
                     <label for="roleInCharge">Role In Charge: *</label>
-                    <select id="roleInCharge" class="size-css" disabled>
-                        <option value="Qr" selected>Quality Representative</option>
+                    <select id="roleInCharge" class="size-css" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="Qr">Quality Representative</option>
                         <option value="Eng">Engineer</option>
                         <option value="Op">Operations Manager</option>
                     </select>
                 </div>
             </fieldset>
-        
+
             <div class="btnContainer">
-                <button type="button" class="btnEdit" onclick="enableEdit()">Edit</button>
-                <button type="button" class="btnSave" style="display:none;" onclick="saveForm()">Save</button>
+                <button type="submit" class="btnSubmit">Submit</button>
                 <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
             </div>
-        </form>        
+        </form>
     </main>
 
     <div id="successPopup" class="popup" style="display:none;">
         <div class="popup-content">
-            <p>Changes saved successfully!</p>
+            <p>NCR created successfully!</p>
             <p>What would you like to do next?</p>
-            <button onclick="window.location.href='create.html';">Create Another NCR</button>
+            <button onclick="createAnotherNCR()">Create Another NCR</button>
             <button onclick="viewAllNCRs()">View All NCRs</button>
             <button onclick="closePopup()">Close</button>
         </div>
@@ -182,13 +181,13 @@
             <h3>FAQ</h3>
             <details>
                 <summary>How to Create a new NCR</summary>
-                <p>You can do so by either clicking on the Create Navigation or by pressing "Create New Ncr" when you are viewing a ncr</p>
+                <p>You can do so by either clicking on the Create Navigation or by pressing create new ncr when you are viewing a ncr</p>
             </details>
             <details>
                 <summary>
                 What happens after submission?
                 </summary>
-                <p>The ncr get sent to the assigned Management for them to review </p>
+                <p>The ncr goes to the assigned Management for them to review </p>
             </details>
             <details>
                 <summary>Need more help?</summary>

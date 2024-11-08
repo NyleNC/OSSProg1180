@@ -844,9 +844,11 @@ input:disabled, textarea:disabled, select:disabled {
 }
 /* FAQ CSS*/
 .faq-container {
+    display: grid;
     margin: 0 auto;
     padding-left: 30px;
+    text-align: left;
+    grid-template-columns:repeat(4,2fr);
     gap:20px;
 }
-
 
