@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFireNCR</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="global-header">
+            <div class="logo">
+                <img src="img/Crossfire-Logo-no-bkgd.png" alt="CrossFire Logo">
+            </div>
+            <div class="global-selection">
+                <form action="#">
+                    <div class="form-input">
+                        <input type="search" class="search-input" placeholder="Search" id="searchData">   
+                        <button type="submit" class="search-btn">
+                            <i class="bx bx-search"></i>
+                        </button>        
+                    </div>
+                </form>
+           
+                <div class="notifications">
+                    <a href="#"><i class='bx bx-bell'></i></a>
+                </div>
+                <div class="employee-info">
+                    <i class='bx bxs-user'></i>
+                    <p>Employee Name</p>
+                </div>
+                <div class="settings">
+                    <a href="#"><i class='bx bx-cog' ></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="navbar-pages">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="ncr.html">NCR</a></li>
+                    <li><a href="create.html">Create</a></li>
+                </ul>
+            </div>
+            <div class="navbar-tools">
+                <ul>
+                    <li><i class='bx bx-refresh bx-sm'></i><a href="ncr.html">Refresh</a></li>
+                    <li><i class='bx bx-printer bx-sm'></i><a href="#" onclick="printPage(); return false;">Print</a></li>
+                    <li class="ddlRole">
+                        <input placeholder="Select Role" list="roles" name="role" id="roleInput" onchange="saveRole()">
+                        <datalist id="roles">
+                            <option value="Quality Rep">
+                            <option value="Engineer">
+                            <option value="Operations Manager">
+                            <option value="Inspector">
+                            <option value="Procurement ">
+                            <option value="Administrator">
+                        </datalist>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="column">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div>
+                <div class="row" id="table">
+                    <h2>My Department</h2>
+                    <table class="table-content">
+                        <thead>
+                            <tr>
+                                <th>Staff ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>123456</td>
+                                <td>Jeff Holmes</td>
+                                <td>jholmes@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE',
+                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+        
+                            </tr>
+                            <tr>
+                                <td>234567</td>
+                                <td>Emily Carter</td>
+                                <td>ecarter@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>345678</td>
+                                <td>Michael Ross</td>
+                                <td>mross@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>456789</td>
+                                <td>Sophia Adams</td>
+                                <td>sadams@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>567890</td>
+                                <td>William Johnson</td>
+                                <td>wjohnson@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>678901</td>
+                                <td>Linda Brown</td>
+                                <td>lbrown@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>789012</td>
+                                <td>James Wilson</td>
+                                <td>jwilson@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>890123</td>
+                                <td>Olivia Davis</td>
+                                <td>odavis@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>901234</td>
+                                <td>David Miller</td>
+                                <td>dmiller@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>012345</td>
+                                <td>Emma Garcia</td>
+                                <td>egarcia@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>112233</td>
+                                <td>Daniel Martinez</td>
+                                <td>dmartinez@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>223344</td>
+                                <td>Isabella Lee</td>
+                                <td>ilee@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="row" id="table">
+                    <h2>My Department</h2>
+                    <table class="table-content">
+                        <thead>
+                            <tr>
+                                <th>Staff ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>123456</td>
+                                <td>Jeff Holmes</td>
+                                <td>jholmes@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE',
+                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+        
+                            </tr>
+                            <tr>
+                                <td>234567</td>
+                                <td>Emily Carter</td>
+                                <td>ecarter@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>345678</td>
+                                <td>Michael Ross</td>
+                                <td>mross@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>456789</td>
+                                <td>Sophia Adams</td>
+                                <td>sadams@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>567890</td>
+                                <td>William Johnson</td>
+                                <td>wjohnson@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>678901</td>
+                                <td>Linda Brown</td>
+                                <td>lbrown@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>789012</td>
+                                <td>James Wilson</td>
+                                <td>jwilson@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>890123</td>
+                                <td>Olivia Davis</td>
+                                <td>odavis@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>901234</td>
+                                <td>David Miller</td>
+                                <td>dmiller@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>012345</td>
+                                <td>Emma Garcia</td>
+                                <td>egarcia@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>112233</td>
+                                <td>Daniel Martinez</td>
+                                <td>dmartinez@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr>
+                            <tr>
+                                <td>223344</td>
+                                <td>Isabella Lee</td>
+                                <td>ilee@crossfire.com</td>
+                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Crossfire. All Rights Reserved.</p>
+        
+        <div class="faq-container">
+            <h3>FAQ</h3>
+            <details>
+                <summary>How to Create a new NCR</summary>
+                <p>You can do so by either clicking on the Create Navigation or by pressing create new ncr when you are viewing a ncr</p>
+            </details>
+            <details>
+                <summary>
+                What happens after submission?
+                </summary>
+                <p>The ncr get sent to the assigned Management for them to review </p>
+            </details>
+          
+            <details>
+                <summary>Need more help?</summary>
+                <p>Contact the Management through @Management.ca or 900-999-9999</p>
+            </details>
+        
+        </div>
+    </footer>
+    
+</body>
+</html>
