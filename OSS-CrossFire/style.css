@@ -837,7 +837,7 @@ textarea {
     background-color: #4a80b2; 
 }
 input:disabled, textarea:disabled, select:disabled {
-    background-color: #c40707;  
+    background-color: grey;  
     border: 1px solid #0a0a0a;      
     cursor: not-allowed;        
     opacity: 0.6;              
