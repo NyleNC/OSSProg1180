@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFireNCR</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="global-header">
+            <div class="logo">
+                <img src="img/Crossfire-Logo-no-bkgd.png" alt="CrossFire Logo">
+            </div>
+            <div class="global-selection">
+                <form action="#">
+                    <div class="form-input">
+                        <input type="search" class="search-input" placeholder="Search" id="searchData">   
+                        <button type="submit" class="search-btn">
+                            <i class="bx bx-search"></i>
+                        </button>        
+                    </div>
+                </form>
+           
+                <div class="notifications">
+                    <a href="#"><i class='bx bx-bell'></i></a>
+                </div>
+                <div class="employee-info">
+                    <i class='bx bxs-user'></i>
+                    <p>Employee Name</p>
+                </div>
+                <div class="settings">
+                    <a href="#"><i class='bx bx-cog' ></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="navbar-pages">
+                <ul>
+                    <li ><a href="index.html">Home</a></li>
+                    <li><a href="ncr.html">NCR</a></li>
+                    <li><a href="create.html">Create</a></li>
+                    <li class="active"><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="navbar-tools">
+                <ul>
+                    <li><i class='bx bx-refresh bx-sm'></i><a href="ncr.html">Refresh</a></li>
+                    <li><i class='bx bx-printer bx-sm'></i><a href="#" onclick="printPage(); return false;">Print</a></li>
+                    <li class="ddlRole">
+                        <input placeholder="Select Role" list="roles" name="role" id="roleInput" onchange="saveRole()">
+                        <datalist id="roles">
+                            <option value="Quality Rep">
+                            <option value="Engineer">
+                            <option value="Operations Manager">
+                            <option value="Inspector">
+                            <option value="Procurement ">
+                            <option value="Administrator">
+                        </datalist>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<div class="faq-content">
+    <h1>FAQ</h1>
+ 
+        <h2 class="faq-subTitle" >NCR</h2>
+        <div class="faq-question">
+          <input id="q1" type="checkbox" class="panel">
+          <div class="plus">+</div>
+          <label for="q1" class="panel-title">How to Create a new NCR</label>
+          <div class="panel-content">You can do so by either clicking on the Create Navigation or by pressing create new NCR when you are viewing a NCR</div>
+        </div>
+        
+        <div class="faq-question">
+          <input id="q2" type="checkbox" class="panel">
+          <div class="plus">+</div>
+          <label for="q2" class="panel-title"> What happens after submission?</label>
+          <div class="panel-content">The ncr get sent to the assigned Management for them to review </div>
+        </div>
+        
+       
+        <div class="faq-question">
+            <input id="q4" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q4" class="panel-title">Want to Print a NCR Report?</label>
+            <div class="panel-content">Click on the "Print" button on the Navagation buttons </div>
+          </div>
+
+          <div class="faq-subTitle">
+        <h2 class="faq-subTitle" >Contact</h2>
+        <div class="faq-question">
+          <input id="q3" type="checkbox" class="panel">
+          <div class="plus">+</div>
+          <label for="q3" class="panel-title">Need more help?</label>
+          <div class="panel-content">Contact the Management through @Management.ca or 900-999-9999</div>
+        </div>
+    </div>
+</div>
+
+    </body>
