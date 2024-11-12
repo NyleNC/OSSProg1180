@@ -640,6 +640,7 @@ footer {
     background-color: #173451; 
     color: white; 
     padding: 10px 0; 
+    margin-top: 100px;
 }
 
 /* Header styles for forms */
@@ -858,6 +859,7 @@ input:disabled, textarea:disabled, select:disabled {
 
   .faq-content h1{
     color: #173451;
+    font-size: 50px;
   }
   
 .faq-question {
@@ -922,8 +924,9 @@ input:disabled, textarea:disabled, select:disabled {
     transition: .4s ease;
   }
   .faq-subTitle{
-    border-style: none;
+ 
     margin-top: 1.5em;
+<<<<<<< HEAD
   }
 
 
@@ -989,3 +992,18 @@ input:disabled, textarea:disabled, select:disabled {
     margin-left: 20px;
     
 } */
+=======
+   
+  }
+  .faq-subTitle h2{
+    color: #3a8fff;
+    border-style: none;
+    font-size: 30px;
+  }
+  #contact{
+    margin-top: 2.5em;
+  }
+  #ncr{
+    margin-bottom: 1em;
+  }
+>>>>>>> 564df4589fcd5c681759001492a097c33c0c6694
