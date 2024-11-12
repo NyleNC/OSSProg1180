@@ -923,10 +923,20 @@ input:disabled, textarea:disabled, select:disabled {
     transition: .4s ease;
   }
   .faq-subTitle{
-    border-style: none;
+  
     margin-top: 1.5em;
   }
-
+  .faq-subTitle h2{
+    color: #3a8fff;
+    border-style: none;
+    font-size: 30px;
+  }
+  #contact{
+    margin-top: 2.5em;
+  }
+  #ncr{
+    margin-bottom: 1em;
+  }
 
   .home-all-ncr{
     margin: 10px;
