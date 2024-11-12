@@ -665,7 +665,7 @@ footer {
 }
 
 /* Form styles */
-h2 {
+.row h2 {
     border-bottom: 1px solid black;
     font-size: 20px; 
     margin-top: 0; 
