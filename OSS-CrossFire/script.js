@@ -3,7 +3,32 @@ function printPage() {
     window.print();
   }
 
-// Pagination for Home Page
+  // Collapse and Enlarge
+  /*const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
+ 
+  homeNcrBoxes.forEach(box => {
+    box.addEventListener('click', function () {
+        console.log(box + "test");
+        });
+    });*/
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all elements with the class .home-ncr-box
+        const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
+    
+        
+            homeNcrBoxes.forEach(box => {
+                box.addEventListener('click', function () {
+                    console.log(box.className + " clicked"); // Display which box was clicked
+                    
+                    return box.classList.toggle("active");
+                    
+                });
+            });
+    });
+  
+
+//Pagination for Home Page
   document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 5; // Number of items to display per page
 
@@ -101,4 +126,4 @@ function saveRole() {
   window.addEventListener("load", loadSelectedRole);
   
   
-  document.getElementById("roleInput").addEventListener("change", saveRole);
+//   document.getElementById("roleInput").addEventListener("change", saveRole);
