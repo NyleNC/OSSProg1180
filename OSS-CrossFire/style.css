@@ -316,7 +316,7 @@ input::-webkit-calendar-picker-indicator {
 .column {
     margin: 2em 10%;
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 40% 60%;
     gap: 2em;
     /* gap: 2em;
     padding-right: 5em;
@@ -939,16 +939,13 @@ input:disabled, textarea:disabled, select:disabled {
   }
 
   .home-ncr-notification{
-    border: 0 solid #0a0a0a;
     border-radius: 1.5em;
     overflow: hidden;
     background-color: #f9f9f9;
+    
   }
 
 
-  .home-other-ncr-department{
-    margin-bottom: 20px;
-  }
   .home-ncr-notification-title{
    color: rgb(1, 52, 78);
     font-size: 20px; 
@@ -964,19 +961,18 @@ input:disabled, textarea:disabled, select:disabled {
     
 .home-ncr-box{
     margin: 10px 15px; 
-    cursor: pointer;   
+       
 }
   .home-all-ncr-section-select{
-    background-color: #e8e8e8;
+    background-color: #c7c7c7;
     padding: 12px; 
     border-radius: 12px;
-    border: 2px solid #c7c7c7;
+    border: 2px solid #9a9999;
     display: flex;
     justify-content: left;
     column-gap: 5px;
     align-items: center;
-    
-  
+    cursor: pointer;
 }
 
   .home-all-ncr-section-select label{
@@ -1012,14 +1008,25 @@ input:disabled, textarea:disabled, select:disabled {
     padding: 0;
     max-height: 0px;
     overflow: hidden; 
+    background-color: #e8e8e8;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
  }
 
  .active .content{
     max-height: 400px;
-    overflow:visible;
-
+    border: 2px solid #9a9999;
+    border-top: 0;
   }
 
+  .active .home-all-ncr-section-select{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .active .expand-arrow{
+    transform: scale(-1);
+  }
  #New {
     background-color: #ff3b35;
     
@@ -1033,6 +1040,53 @@ input:disabled, textarea:disabled, select:disabled {
   #Closed {
     background-color: #1fbd10;
   }
+  
+  .home-other-ncr{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .home-department-title{
+    color: rgb(1, 52, 78);
+    font-size: 20px; 
+    padding: 20px;
+    font-weight: bold;
+    background-color: #73b4f9;
+    border-top-right-radius: auto;
+    border-top-left-radius: auto;
+    margin-bottom: 10px;
+    display: flex;
+    margin-top: 0;
+  }
+
+  .home-other-ncr .content{
+    margin: 0 10px 20px;
+  }
+
+  .home-other-ncr-chart{
+    border-radius: 1.5em;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    display: block;
+    max-width: fit-content;
+    margin-top: 25px;
+  }
+
+  
+  .piechart {
+    margin: 20px 20px;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: conic-gradient(
+        #ff3b35 70deg,
+        #ff7b00 0 220deg,
+        #1fbd10 0 70deg
+    );
+}
+
 
 /* .home-all-enlarge{
     display: inline    

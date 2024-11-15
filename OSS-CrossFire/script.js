@@ -3,6 +3,31 @@ function printPage() {
     window.print();
   }
 
+  //Piechart
+//   const ctx = document.getElementById('NcrChart');
+
+//   new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+
+//     }
+//   }) = {
+//     labels: [
+//       'New',
+//       'Pending',
+//       'Completed'
+//     ],
+//     datasets: [{
+//       label: 'NCRs',
+//       data: [2, 5, 3],
+//       backgroundColor: [
+//         '#ff3b35',
+//         '#ff7b00',
+//         '#1fbd10'
+//       ],
+//       hoverOffset: 4
+//     }]
+//   };
   // Collapse and Enlarge
   /*const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
  
@@ -15,14 +40,15 @@ function printPage() {
     document.addEventListener('DOMContentLoaded', function () {
         // Select all elements with the class .home-ncr-box
         const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
-    
-        
+      
             homeNcrBoxes.forEach(box => {
-                box.addEventListener('click', function () {
-                    console.log(box.className + " clicked"); // Display which box was clicked
-                    
-                    return box.classList.toggle("active");
-                    
+                const homeNcrSelect = box.querySelector(".home-all-ncr-section-select");
+                const homeNcrContent = box.querySelector(".content");
+
+                homeNcrSelect.addEventListener('click', function () {
+                    console.log("clicked");
+                    box.classList.toggle("active");
+    
                 });
             });
     });

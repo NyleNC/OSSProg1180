@@ -7,6 +7,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
 <body>
     <header>
@@ -78,12 +80,35 @@
                     <img class="expand-arrow" src="img/Expand-arrow.png">                
                 </div>
                 <div class="content">
-                 <p>hiiddskafalfjlafkjldjflskajflsa
-                    Dfas
-                    DFas
-                    DSFAaFDSa
-                 </p>
-                  
+               
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NCR</th>
+                                <th>Supplier</th>
+                                <th>Product</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>234567</td>
+                                <td>Microsoft</td>
+                                <td>product</td>
+                                <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                             </tr>
+                            <tr>
+                                <td>345678</td>
+                                <td>Lenovo</td>
+                                <td>product</td>
+                                <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                             </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -95,11 +120,58 @@
                     <img class="expand-arrow" src="img/Expand-arrow.png">                
                 </div>
                 <div class="content">
-                    <p>hiiddskafalfjlafkjldjflskajflsa
-                        Dfas
-                        DFas
-                        DSFAaFDSa
-                     </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NCR</th>
+                                <th>Supplier</th>
+                                <th>Product</th>
+                                <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>789012</td>
+                                    <td>Dell Technologies</td>
+                                    <td>product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                 </tr>
+                                <tr>
+                                    <td>890123</td>
+                                    <td>Lenovo</td>
+                                    <td>product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                 </tr>
+                                <tr>
+                                    <td>901234</td>
+                                    <td>Lenovo</td>
+                                    <td>product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                  </tr>
+                                <tr>
+                                    <td>112233</td>
+                                    <td>Dell Technologies</td>
+                                    <td>product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                  </tr>
+                                <tr>
+                                    <td>223344</td>
+                                    <td>Dell Technologies</td>
+                                    <td>product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                 </tr> 
+                        </tbody>
+                    </table>     
                 </div>
             </div>
 
@@ -111,19 +183,50 @@
                     <img class="expand-arrow" src="img/Expand-arrow.png">                
                </div>
                 <div class="content">
-                    <p>hiiddskafalfjlafkjldjflskajflsa
-                        Dfas
-                        DFas
-                        DSFAaFDSa
-                     </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NCR</th>
+                                <th>Supplier</th>
+                                <th>Product</th>
+                               <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>789012</td>
+                                    <td>Dell Technologies</td> 
+                                    <td>Prodcut</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                  </tr>
+                                <tr>
+                                    <td>890123</td>
+                                    <td>Lenovo</td>
+                                    <td>Product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                 </tr>
+                                <tr>
+                                    <td>901234</td>
+                                    <td>Dell Technologies</td>
+                                    <td>Product</td>
+                                    <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                                        'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                                </tr>
+                            </tbody>
+                    </table>
                 </div>
             </div>
         </div>
         <div class="home-other-ncr">
-            <div class="home-other-ncr-department">
-                <div class="row" id="table">
-                    <h2>My Department</h2>
-                    <table class="table-content">
+            <div class="home-ncr-notification">
+        
+                    <h2 class="home-department-title">My Department</h2>
+                    <table class="content">
                         <thead>
                             <tr>
                                 <th>Staff ID</th>
@@ -133,30 +236,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                         
                             <tr>
-                                <td>123456</td>
-                                <td>Jeff Holmes</td>
-                                <td>jholmes@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE',
-                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-        
-                            </tr>
-                            <tr>
-                                <td>234567</td>
-                                <td>Emily Carter</td>
-                                <td>ecarter@crossfire.com</td>
+                                <td>678901</td>
+                                <td>Linda Brown</td>
+                                <td>lbrown@crossfire.com</td>
                                 <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
                             </tr>
+                           
                             <tr>
-                                <td>345678</td>
-                                <td>Michael Ross</td>
-                                <td>mross@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>456789</td>
-                                <td>Sophia Adams</td>
-                                <td>sadams@crossfire.com</td>
+                                <td>890123</td>
+                                <td>Olivia Davis</td>
+                                <td>odavis@crossfire.com</td>
                                 <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
                             </tr>
                             <tr>
@@ -171,136 +262,12 @@
                                 <td>lbrown@crossfire.com</td>
                                 <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
                             </tr>
-                            <tr>
-                                <td>789012</td>
-                                <td>James Wilson</td>
-                                <td>jwilson@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>890123</td>
-                                <td>Olivia Davis</td>
-                                <td>odavis@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>901234</td>
-                                <td>David Miller</td>
-                                <td>dmiller@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>012345</td>
-                                <td>Emma Garcia</td>
-                                <td>egarcia@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>112233</td>
-                                <td>Daniel Martinez</td>
-                                <td>dmartinez@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>223344</td>
-                                <td>Isabella Lee</td>
-                                <td>ilee@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr> 
                         </tbody>
                     </table>
-                </div>
             </div>
-            <div>
-                <div class="row" id="table">
-                    <h2>My Department</h2>
-                    <table class="table-content">
-                        <thead>
-                            <tr>
-                                <th>Staff ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>123456</td>
-                                <td>Jeff Holmes</td>
-                                <td>jholmes@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE',
-                                    'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-        
-                            </tr>
-                            <tr>
-                                <td>234567</td>
-                                <td>Emily Carter</td>
-                                <td>ecarter@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>345678</td>
-                                <td>Michael Ross</td>
-                                <td>mross@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>456789</td>
-                                <td>Sophia Adams</td>
-                                <td>sadams@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>567890</td>
-                                <td>William Johnson</td>
-                                <td>wjohnson@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>678901</td>
-                                <td>Linda Brown</td>
-                                <td>lbrown@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>789012</td>
-                                <td>James Wilson</td>
-                                <td>jwilson@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>890123</td>
-                                <td>Olivia Davis</td>
-                                <td>odavis@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>901234</td>
-                                <td>David Miller</td>
-                                <td>dmiller@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>012345</td>
-                                <td>Emma Garcia</td>
-                                <td>egarcia@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>112233</td>
-                                <td>Daniel Martinez</td>
-                                <td>dmartinez@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr>
-                            <tr>
-                                <td>223344</td>
-                                <td>Isabella Lee</td>
-                                <td>ilee@crossfire.com</td>
-                                <td><a href="" onclick="window.open(this.href, 'SAMPLE', 'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View Records</a></td>
-                            </tr> 
-                        </tbody>
-                    </table>
-                </div>
+            <div class="home-other-ncr-chart">
+                <div class="home-department-title">Chart Analysis</div>
+                <div class="piechart"></div>
             </div>
         </div>
     </div>
