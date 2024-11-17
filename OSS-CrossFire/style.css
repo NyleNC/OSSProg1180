@@ -727,6 +727,16 @@ label {
     width: 200px; 
 }
 
+/* For the text area to stay fixed. */
+[class^="form-ta-"] textarea {
+    resize: vertical;
+    border-radius: 8px;
+    padding: 0.60rem 1.12rem; 
+    min-height: calc(1.5em + .75rem + 2px);
+}
+
+
+
 /* Input Styles */
 input[type="text"],
 input[type="number"],
@@ -854,6 +864,10 @@ input:disabled, textarea:disabled, select:disabled {
     cursor: not-allowed;        
     opacity: 0.6;              
 }
+
+
+
+
 /* FAQ CSS */
 .faq-content {
     margin: 60px 200px;
