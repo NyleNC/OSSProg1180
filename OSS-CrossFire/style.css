@@ -208,7 +208,7 @@
 
 
 input[type='checkbox'] {
-    -webkit-appearance: none;
+    appearance: none;           /* Changed because there was no difference. */
     width: 20px;
     height: 20px;
     background: #173451;
@@ -640,7 +640,7 @@ footer {
     background-color: #173451; 
     color: white; 
     padding: 10px 0; 
-    margin-top: 100px;
+    margin-top: auto;
 }
 
 /* Header styles for forms */
@@ -673,6 +673,9 @@ footer {
 }
 
 .edit-p {
+    display: inline;
+    padding: 4px;
+    padding-right: 8px;
     background-color: #ff7772;
     border-radius: 5px; 
     margin-bottom: 20px;
@@ -853,20 +856,21 @@ input:disabled, textarea:disabled, select:disabled {
 }
 /* FAQ CSS */
 .faq-content {
-    margin: 60px 200px 0;
-     
-  }
+    margin: 60px 200px;
+    padding-bottom: 10px;
+}
 
-  .faq-content h1{
+.faq-content h1{
     color: #173451;
-  }
-  
+    margin-bottom: 0px;
+}
+
 .faq-question {
     padding: 20px 0;
     border-bottom: 3px solid #4a80b2 ;
 
-  }
-  .panel-title {
+}
+.panel-title {
     font-size: 24px;
     width: 100%;
     position: relative;
@@ -874,14 +878,14 @@ input:disabled, textarea:disabled, select:disabled {
     padding: 10px 10px 0 48px;
     display: block;
     cursor: pointer;
-  }
-  
-  .panel:checked ~ .panel-content{
+}
+
+.panel:checked ~ .panel-content{
     height: auto;
     opacity: 1;
     padding: 14px;
-  }
-  .plus {
+}
+.plus {
     position: absolute;
     margin-left: 20px;
     margin-top: 4px;
