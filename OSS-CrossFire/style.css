@@ -1034,7 +1034,7 @@ input:disabled, textarea:disabled, select:disabled {
   
  #Pending   {
     background-color: #ff7b00;
-  }
+  } 
 
 
   #Closed {
@@ -1053,8 +1053,8 @@ input:disabled, textarea:disabled, select:disabled {
     padding: 20px;
     font-weight: bold;
     background-color: #73b4f9;
-    border-top-right-radius: auto;
-    border-top-left-radius: auto;
+    border-top-right-radius: 1.5em;
+    border-top-left-radius: 1.5em;
     margin-bottom: 10px;
     display: flex;
     margin-top: 0;
@@ -1066,15 +1066,32 @@ input:disabled, textarea:disabled, select:disabled {
 
   .home-other-ncr-chart{
     border-radius: 1.5em;
-    overflow: hidden;
     background-color: #f9f9f9;
-    display: block;
-    max-width: fit-content;
+    display: flex;
+    width: 300px;
     margin-top: 25px;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
+  .ncrPiechart {
+    margin: 10px 30px;
+  }
   
-  .piechart {
+  .home-chart-title{
+    color: rgb(1, 52, 78);
+    font-size: 20px; 
+    padding: 20px;
+    font-weight: bold;
+    background-color: #73b4f9;
+    border-top-right-radius: 1.2em;
+    border-top-left-radius: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    margin-top: 0;
+  }
+
+  /* .piechart {
     margin: 20px 20px;
     display: flex;
     width: 200px;
@@ -1085,7 +1102,7 @@ input:disabled, textarea:disabled, select:disabled {
         #ff7b00 0 220deg,
         #1fbd10 0 70deg
     );
-}
+} */
 
 
 /* .home-all-enlarge{

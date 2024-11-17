@@ -4,30 +4,36 @@ function printPage() {
   }
 
   //Piechart
-//   const ctx = document.getElementById('NcrChart');
+  window.onload = function()
+    {
 
-//   new Chart(ctx, {
-//     type: 'bar',
-//     data: {
+        const ctx = document.getElementById('NcrChart');
 
-//     }
-//   }) = {
-//     labels: [
-//       'New',
-//       'Pending',
-//       'Completed'
-//     ],
-//     datasets: [{
-//       label: 'NCRs',
-//       data: [2, 5, 3],
-//       backgroundColor: [
-//         '#ff3b35',
-//         '#ff7b00',
-//         '#1fbd10'
-//       ],
-//       hoverOffset: 4
-//     }]
-//   };
+        new Chart(ctx, 
+        {
+            type: 'pie',
+            data: 
+            {
+                labels: [
+                'New',
+                'Pending',
+                'Completed'
+                ],
+                datasets: [{
+                label: 'NCRs',
+                data: [2, 5, 3],
+                backgroundColor: [
+                    '#ff3b35',
+                    '#ff7b00',
+                    '#1fbd10'
+                ],
+                hoverOffset: 4
+                }]
+            }, option: {
+                responsive: false
+            }
+        });
+    }
   // Collapse and Enlarge
   /*const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
  
