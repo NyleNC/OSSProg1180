@@ -65,7 +65,9 @@
 .employee-info{
     white-space: nowrap;
 }
+.employee-info i{
 
+}
 .employee-info p {
     font-size: 15px;
     display: inline-block;
@@ -488,6 +490,38 @@ body {
 .notifications {
     margin: 15px 20px 0 20px;
 }
+
+.notifications label{
+    cursor: pointer;
+}
+.toggle-checkbox-notif{
+display: none;
+}
+.notification-box{
+display: none;
+position: absolute;
+  top: 40px;
+  right: 0;
+  width: 200px;
+  padding: 10px;
+  background-color: #0f406d;
+  border: 2px solid #173451;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.notification-box-title{
+    display: flex;
+    
+    font: sans-serif;
+    color: #eff6ff;
+}
+.toggle-checkbox-notif:checked + .bell + .notification-box{
+    display: block;
+}
+
+
 
 .employee-info {
     white-space: nowrap;
