@@ -276,6 +276,11 @@ input::-webkit-calendar-picker-indicator {
     box-sizing: border-box;
   }
 
+#print-btn {
+    cursor: pointer;
+    color: blue;
+}
+
 .column-1 h2{
     margin-top: 20px;
     margin-bottom: 10px;
@@ -423,6 +428,7 @@ td, th {
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
 
 
 
