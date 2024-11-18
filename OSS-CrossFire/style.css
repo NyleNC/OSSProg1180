@@ -469,15 +469,16 @@ main{
 }
 
 /* Form Input Styles */
-.ncrSection-title{
+.ncrSection-title {
     cursor: pointer;
     background-color: #68b1fa;
     color: #002449;
     display: inline-block;
-    width: fit-content;
+    width: 250px;
+    text-align: center;
     padding: 10px 30px;
     font-weight: bold;
-    border:3px solid #322f4a;
+    border: 3px solid #322f4a;
     border-radius: 1em;
     margin: 20px 0 0;
 }
@@ -826,6 +827,7 @@ label {
     border-radius: 8px;
     padding: 0.60rem 1.12rem; 
     min-height: calc(1.5em + .75rem + 2px);
+    max-height: calc(8em + 2rem);
 }
 
 

@@ -126,50 +126,49 @@ function enableDisableTextbox(e){
 
 
 // For Saving a form.
-function saveFormToStorage() {
-  const form = document.getElementById("ncr-form");
-  const formData = {};
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("#ncr-form");
+  const saveButton = document.querySelector(".btnSave");
+  let isFormDirty = false;
 
-  Array.from(form.elements).forEach(element => {
-      if (element.name) {
-          formData[element.name] = element.value;
+  // Show save button when the user starts filling the form
+  form.addEventListener("input", function () {
+      if (!isFormDirty) {
+          isFormDirty = true;
+          saveButton.style.display = "inline-block"; // Show save button
       }
   });
 
-  localStorage.setItem("ncrFormData", JSON.stringify(formData));
-}
+  // Save form data to localStorage
+  saveButton.addEventListener("click", function () {
+      const formData = new FormData(form);
+      const dataToSave = {};
 
-function loadFormFromStorage() {
+      // Convert form data to an object
+      for (const [key, value] of formData.entries()) {
+          dataToSave[key] = value;
+      }
+
+      localStorage.setItem("ncrFormData", JSON.stringify(dataToSave));
+      alert("Form data saved locally!");
+  });
+
+  // Warn the user if they try to navigate away with unsaved changes
+  window.addEventListener("beforeunload", function (event) {
+      if (isFormDirty) {
+          event.preventDefault();
+          event.returnValue = ""; 
+      }
+  });
+
+  // Pre-fill the form if saved data exists
   const savedData = JSON.parse(localStorage.getItem("ncrFormData"));
-
   if (savedData) {
-      const form = document.getElementById("ncr-form");
-
-      Object.keys(savedData).forEach(name => {
-          const field = form.elements[name];
+      for (const [key, value] of Object.entries(savedData)) {
+          const field = form.elements[key];
           if (field) {
-              field.value = savedData[name];
+              field.value = value;
           }
-      });
+      }
   }
-}
-
-document.getElementById("ncr-form").addEventListener("input", saveFormToStorage);
-
-window.addEventListener("load", loadFormFromStorage);
-
-
-// For Debouncing input event.
-let debounceTimeout;
-document.getElementById("ncr-form").addEventListener("input", () => {
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(toggleSaveButton, 300); // 300ms delay
 });
-
-// Clear the saved data after submiting
-function clearStorageOnSubmit() {
-  localStorage.removeItem("ncrFormData");
-}
-document.getElementById("ncr-form").addEventListener("submit", clearStorageOnSubmit);
-
-
