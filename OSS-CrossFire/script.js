@@ -3,7 +3,66 @@ function printPage() {
     window.print();
   }
 
-// Pagination for Home Page
+  //Piechart
+  window.onload = function()
+    {
+
+        const ctx = document.getElementById('NcrChart');
+
+        new Chart(ctx, 
+        {
+            type: 'pie',
+            data: 
+            {
+                labels: [
+                'New',
+                'Pending',
+                'Completed'
+                ],
+                datasets: [{
+                label: 'NCRs',
+                data: [2, 5, 3],
+                backgroundColor: [
+                    '#ff3b35',
+                    '#ff7b00',
+                    '#1fbd10'
+                ],
+                hoverOffset: 4
+                }]
+            }, option: {
+                responsive: false
+            }
+        });
+    }
+  // Collapse and Enlarge
+  /*const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
+ 
+  homeNcrBoxes.forEach(box => {
+    box.addEventListener('click', function () {
+        console.log(box + "test");
+        });
+    });*/
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all elements with the class .home-ncr-box
+        const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
+      
+            homeNcrBoxes.forEach(box => {
+                const homeNcrSelect = box.querySelector(".home-all-ncr-section-select");
+                const homeNcrContent = box.querySelector(".content");
+
+                homeNcrSelect.addEventListener('click', function () {
+                    console.log("clicked");
+                    box.classList.toggle("active");
+    
+                });
+            });
+    });
+
+    
+  
+
+//Pagination for Home Page
   document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 5; // Number of items to display per page
 
@@ -96,9 +155,18 @@ function saveRole() {
         }
     }
   }
-  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('print-btn').addEventListener('click', function() {
+        const path = "pdf/summary.pdf";
+        const printWindow = window.open(path, '_blank');
+        printWindow.addEventListener('load', function() {
+          printWindow.print();
+        });
+    });
+  })
   
   window.addEventListener("load", loadSelectedRole);
   
   
-  document.getElementById("roleInput").addEventListener("change", saveRole);
+//   document.getElementById("roleInput").addEventListener("change", saveRole);

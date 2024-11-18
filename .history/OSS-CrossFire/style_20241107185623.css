@@ -1,0 +1,853 @@
+/* Radin's CSS Code */
+
+
+.global-header {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 60px;
+    margin: 10px 60px 0;
+}
+
+.logo img {
+    max-width: 190px;
+    height: auto;
+    
+}
+
+.global-selection a{
+    color:#0F0F0F
+}
+.form-input{
+    display: inline;
+    white-space: nowrap;
+}
+
+
+
+.form-input button {
+    margin-top: 10px;
+
+}
+
+.bx.bx-search {
+    padding-top: 2px;
+
+}
+
+.search-btn{
+    background-color: #A3D6FF;
+    border: 2px solid #0F0F0F;
+    margin-left: 0;
+}
+
+.search-input{
+    margin-top: 10px;
+    margin-right: 0;
+    border: 2px solid #0F0F0F;
+    border-right: none;
+}
+
+.form-input{
+    white-space: nowrap;
+    display: flex;
+}
+.form-input input {
+    padding-right: 10px;
+
+}
+
+.notifications {
+
+    margin: 15px 20px 0 20px;
+
+}
+
+.employee-info{
+    white-space: nowrap;
+}
+
+.employee-info p {
+    font-size: 15px;
+    display: inline-block;
+    margin: 16px 0 20px 0 ;
+    padding-bottom: 20px;
+}
+
+.settings {
+    margin:17px 7px 0 20px ;
+    justify-content: right;
+}
+
+
+.global-selection{
+    display: inline-flex;  
+    padding-top: 5px;
+    justify-content: right;
+}
+
+
+.navbar-pages ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0  0 0 60px;
+    overflow: hidden;
+    display: inline-block;
+    border-bottom: 2px solid #A3D6FF;
+}
+
+.navbar-pages a{
+    color: #0F0F0F;
+    text-decoration: none;
+    padding: 10px 25px;
+    display:block;
+    text-align: center;
+}
+.navbar-pages a:active{
+    background-color:#A3D6FF;
+    font-weight: bold;
+    border-bottom: 2px solid #A3D6FF;
+    margin-bottom: -2px;
+}
+
+.navbar-pages li a:hover{
+    color: #D81E5B;
+}
+
+.navbar-pages .active a:hover{
+    color: #0F0F0F;
+}
+
+.navbar-pages{
+    margin:0;
+    z-index: 5;
+}
+
+.navbar-pages a{
+    font-size: 18px;
+}
+.navbar-pages li{
+    float:left;
+    border-width: 4px;
+    border: 2px solid #0F0F0F;
+}
+
+.navbar-pages li:nth-of-type(1){
+    border-right: 0px solid #0F0F0F;
+}
+
+.navbar-pages li:nth-of-type(3){
+    border-left: 0px solid #0F0F0F;
+}
+
+.navbar-pages .active {
+    background-color:#A3D6FF
+    ;
+    font-weight: bold;
+    border-bottom: 4px solid #A3D6FF;
+    margin-bottom: -2px;
+    
+}
+
+.navbar-tools{
+    border-top: 2px solid #0F0F0F;
+    margin-top: -7px;
+}
+
+.navbar-tools ul{
+    background-color: #A3D6FF;
+    margin-top: -2px;
+    margin-bottom: 0;
+    border-top: 2px solid #0F0F0F;
+    border-bottom: 2px solid #0F0F0F;
+    list-style-type: none;
+    padding: 20px 60px 10px;
+    display: flex;
+}
+
+.navbar-tools li{
+    margin-right: 40px;
+    
+}
+
+.navbar-tools a {
+    float: right;
+    padding: 3px 6px;
+    text-decoration: none;
+}
+
+.navbar-tools .ddlRole{
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.sidebar{
+   
+    background-color: #173451; 
+    color: white;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.sidebar h1{
+    width: 85%;
+    font-weight: lighter;
+    border-bottom: 2px solid #E3E7F2;
+}
+
+.filters h2{
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 1.4em;
+    border-bottom: none;
+}
+
+.filters{
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #173451;
+    border-radius: 5px;
+    border: 3px solid #E3E7F2;
+    float: left;
+}
+input[type='checkbox']:checked {
+    background: #3a8fff;
+}
+
+.filters label{
+    display: inline-block;
+    font-size: 1.1em;
+    margin-left: 3px;
+    margin-top: 5px;
+}
+
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+ *:focus-visible{
+    outline: 2px solid #D81E5B;
+}
+@media only screen and (max-width: 800px) {
+    .global-header {
+    margin: 10px 20px 0;
+    }
+
+    .logo img{
+        max-width: 150px;
+        margin-top: 5px;
+    }
+
+    
+    .search-btn{
+        background-color: #A3D6FF;
+        border: 2px solid #0F0F0F;
+        margin-left: 0;
+    }
+    
+    .search-input{
+        margin-top: 10px;
+        margin-right: 0;
+        border: 2px solid #0F0F0F;
+        border-right: none;
+    }
+    
+    .form-input{
+        white-space: nowrap;
+        display: flex;
+    }
+    .notifications {
+
+        margin: 15px 5px 0 10px;
+    
+    }
+
+  }
+
+/* Yaseen's CSS Code */
+
+  * {
+    box-sizing: border-box;
+  }
+
+.column-1 h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+
+.ncr-table-body td {
+    padding-right: 5em;
+}
+
+.pagination {
+    float: right;
+}
+
+.pageCount {
+    padding-right: 50px;
+}
+
+.pageButtons, .pageCount {
+    display: inline-block;
+}
+
+.pageButtons {
+    background-color: transparent;
+    border: none;
+    font-size: 16pt;
+    padding: 0;
+    color: #173451;
+    transition: background-color 0.3s ;
+}
+
+.pageButtons:hover{
+    background-color: #A3D6FF;
+}
+
+.column {
+    margin-top: 1.5em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2em;
+    padding-right: 5em;
+    padding-left: 3em;
+    margin-bottom: 1.5em;
+  }
+
+.column-1 {
+    display: block;
+    margin-bottom:80px;
+    margin-right: 30px;
+    margin-left: 30px;
+
+}
+
+.ncr-footer{
+    display: block;
+    padding-bottom: 30px;
+}
+
+main{
+    margin: 0;
+    padding: 0
+}
+
+.filter-menu {
+    background-color: #555;
+}
+
+.row, .row1 {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 1.5em;
+}
+
+#table-4 {
+    margin-bottom: 9.5em;
+}
+
+.row1-ncr{
+    padding:0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    margin-top: 1em;
+    margin-right: 0;
+    margin-bottom: auto;
+}
+
+
+
+table {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: left;
+}
+
+td, th {
+    padding: 5px;
+    padding-right: 2.5em;
+}
+
+.hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .table-content {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+/* scrollbar style */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #173451; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+
+  /* New CSS */
+  /* Global Styles */ 
+body {
+    /*
+    display : flex;
+    flex-direction: column; */
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; 
+    background-color: #E3E7F2; 
+}
+
+/* Header Styles */
+.global-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 60px;
+    margin: 10px 60px 0;
+}
+
+.logo img {
+    max-width: 190px;
+    height: auto;
+}
+
+.global-selection a {
+    color: #0F0F0F;
+}
+
+/* Form Input Styles */
+.form-input {
+    display: inline-flex;
+    white-space: nowrap;
+}
+
+.form-input button {
+    margin-top: 10px;
+}
+
+.bx.bx-search {
+    padding-top: 2px;
+}
+
+.search-btn {
+    background-color: #A3D6FF;
+    border: 2px solid #0F0F0F;
+    margin-left: 0;
+}
+
+.search-input {
+    margin-top: 10px;
+    margin-right: 0;
+    border: 2px solid #0F0F0F;
+    border-right: none;
+}
+
+/* Notification and Employee Info Styles */
+.notifications {
+    margin: 15px 20px 0 20px;
+}
+
+.employee-info {
+    white-space: nowrap;
+}
+
+.employee-info p {
+    font-size: 15px;
+    display: inline-block;
+    margin: 16px 0 20px 0;
+    padding-bottom: 20px;
+}
+
+/* Settings and Global Selection Styles */
+.settings {
+    margin: 17px 7px 0 20px;
+    justify-content: right;
+}
+
+.global-selection {
+    display: inline-flex;
+    padding-top: 5px;
+    justify-content: right;
+}
+
+/* Navbar Styles */
+.navbar-pages {
+    margin: 0;
+    z-index: 5;
+}
+
+.navbar-pages ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 60px;
+    overflow: hidden;
+    display: inline-block;
+    border-bottom: 2px solid #A3D6FF;
+}
+
+.navbar-pages li {
+    float: left;
+    border: 2px solid #0F0F0F;
+}
+
+.navbar-pages li:nth-of-type(even) {
+    border-right: 2px solid #0F0F0F; /* Specify style */
+    border-left: 2px solid #0F0F0F; /* Specify style */
+}
+
+.navbar-pages a {
+    color: #0F0F0F;
+    text-decoration: none;
+    padding: 10px 25px;
+    display: block;
+    text-align: center;
+    font-size: 18px; 
+}
+
+.navbar-pages a:active {
+    background-color: #A3D6FF;
+    font-weight: bold;
+    border-bottom: 2px solid #A3D6FF;
+    margin-bottom: -2px;
+}
+
+.navbar-pages a:hover {
+    color: #D81E5B;
+}
+
+.navbar-pages .active {
+    background-color: #A3D6FF;
+    font-weight: bold;
+    border-bottom: 4px solid #A3D6FF;
+    margin-bottom: -2px;
+}
+
+/* Navbar Tools Styles */
+.navbar-tools {
+    border-top: 2px solid #0F0F0F;
+    margin-top: -7px;
+}
+
+.navbar-tools ul {
+    background-color: #A3D6FF;
+    margin-top: -2px;
+    margin-bottom: 0;
+    border-top: 2px solid #0F0F0F;
+    border-bottom: 2px solid #0F0F0F;
+    list-style-type: none;
+    padding: 20px 60px 10px;
+    display: flex;
+}
+
+.navbar-tools li {
+    margin-right: 40px;
+}
+
+.navbar-tools a {
+    float: right;
+    padding: 3px 6px;
+}
+
+.navbar-tools .ddlRole {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* Input Styles for Date Picker */
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+/* Focus Styles */
+*:focus-visible {
+    outline: 2px solid #D81E5B; 
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 800px) {
+    .global-header {
+        margin: 10px 20px 0;
+    }
+
+    .logo img {
+        max-width: 150px;
+        margin-top: 5px;
+    }
+
+    .notifications {
+        margin: 15px 5px 0 10px;
+    }
+}
+
+
+/* Sahil's CSS */
+/* Main elements for forms */
+.create-main {
+    padding: 25px 50px; 
+    background-color: #e5ecf4; 
+    border-radius: 8px;
+}
+
+.ncr-main{
+    display: grid;
+    grid-template-columns: 18% 82%;
+}
+
+footer {
+    text-align: center;
+    background-color: #173451; 
+    color: white; 
+    padding: 10px 0; 
+}
+
+/* Header styles for forms */
+.head-top {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    padding-right: 28px;
+}
+
+.head-top .logo img {
+    height: 100px; 
+    margin-left: 6px; 
+    border-radius: 8px; 
+}
+
+.head-top h1 {
+    color: #173451; 
+    font-size: 22px; 
+    font-weight: bold;
+}
+
+/* Form styles */
+h2 {
+    border-bottom: 1px solid black;
+    font-size: 20px; 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+}
+
+.edit-p {
+    background-color: #ff7772;
+    border-radius: 5px; 
+    margin-bottom: 20px;
+    line-height: 1.5; 
+}
+
+fieldset {
+    border: 2px solid #5897c9; 
+    border-radius: 6px; 
+    margin-top: 20px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+}
+
+legend {
+    font-size: 1.2em;
+    color: #173451; 
+    font-weight: 600;
+}
+
+.form-group {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.left-side,
+.right-side {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.right-side {
+    margin-right: 0; 
+}
+
+label {
+    width: 140px; 
+    font-weight: 500; 
+}
+
+/* CSS for individual elements */
+.size-css {
+    width: 60%; 
+    padding: 5px;
+}
+
+.form-group select {
+    width: 200px; 
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: 250px; 
+    padding: 5px; 
+    border: 1px solid #322f4a;
+    border-radius: 5px; 
+    transition: border-color 0.3s; 
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #5897c9; 
+}
+
+textarea {
+    width: 60%;
+    height: 100px; 
+}
+
+/* Button Container */
+.btnContainer {
+    display: flex; 
+    justify-content: flex-start; 
+    margin-top: 20px; 
+}
+
+/* Button Styles */
+.btnSubmit,
+.btnCancel,
+.btnEdit,
+.btnSave {
+    width: 150px; 
+    padding: 10px 15px; 
+    border: 2px solid #173451; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-weight: bold; 
+    transition: background-color 0.3s; 
+    margin-right: 10px; 
+}
+
+.btnSubmit {
+    background-color: #5897c9; 
+    color: white; 
+}
+
+.btnSubmit:hover {
+    background-color: #4a80b2; 
+}
+
+.btnCancel {
+    background-color: #d9534f; 
+    color: white; 
+}
+
+.btnCancel:hover {
+    background-color: #c9302c;
+}
+
+.btnEdit,
+.btnSave {
+    background-color: #5897c9; 
+    color: white;
+}
+
+.btnEdit:hover,
+.btnSave:hover {
+    background-color: #4a80b2; 
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(229, 236, 244, 0.6); 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.popup-content {
+    border: 2px solid #173451; 
+    background-color: #e5ecf4; 
+    padding: 20px; 
+    border-radius: 5px; 
+    text-align: center; 
+}
+
+.popup-content button {
+    padding: 10px 15px; 
+    border: 2px solid #173451; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-weight: bold; 
+    transition: background-color 0.3s;
+    margin: 5px; 
+    background-color: #5897c9; 
+    color: white; 
+}
+
+.popup-content button:last-child {
+    background-color: #d9534f;
+}
+
+.popup-content button:last-child:hover {
+    background-color: #c9302c; 
+}
+
+.popup-content button:hover {
+    background-color: #4a80b2; 
+}
+input:disabled, textarea:disabled, select:disabled {
+    background-color: #c40707;  
+    border: 1px solid #0a0a0a;      
+    cursor: not-allowed;        
+    opacity: 0.6;              
+}
+/* FAQ CSS*/
+.faq-container {
+    display: grid;
+    margin: 0 auto;
+    padding-left: 50px;
+    text-align: left;
+    grid-template-columns:repeat(4,1fr);
+}
+

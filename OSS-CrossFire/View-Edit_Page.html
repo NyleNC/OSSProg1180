@@ -48,12 +48,13 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ncr.html">NCR</a></li>
                     <li class="active"><a href="create.html">Create</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="navbar-tools">
                 <ul>
                     <li><i class='bx bx-refresh bx-sm' aria-hidden="true"></i><a href="ncr.html">Refresh</a></li>
-                    <li><i class='bx bx-printer bx-sm' aria-hidden="true"></i><a href="#" onclick="printPage(); return false;">Print</a></li>
+                    <li><i class='bx bx-printer bx-sm'></i><a id="print-btn">Print PDF</a></li>
                    <li class="ddlRole">
                     <input placeholder="Select Role" list="roles" name="role" id="roleInput" onchange="saveRole()">
                         <datalist id="roles">
@@ -100,7 +101,7 @@
                 </div><br>
         
                 <div class="form-group">
-                    <label for="supplierName">Supplier Name: *</label>
+                    <label for="supplierName">Supplier Name: *</label>&nbsp;&nbsp;
                     <input type="text" id="supplierName" class="size-css" value="Apex Supply Co." readonly>
                 </div>
         
@@ -110,7 +111,7 @@
                         <input type="text" id="ProductNo" value="56784" readonly>
                     </div>
                     <div class="left-side">
-                        <label for="SaleOrderNo">Sales Order No.: *</label>
+                        <label for="SaleOrderNo">Sales Order No.: *</label>&nbsp;&nbsp;&nbsp;
                         <input type="text" id="SaleOrderNo" value="91014" readonly>
                     </div>
                 </div>
@@ -176,7 +177,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="ncr-footer">
         <p>&copy; 2024 Crossfire. All Rights Reserved.</p>
     </footer>
 
