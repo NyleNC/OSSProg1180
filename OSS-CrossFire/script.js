@@ -58,7 +58,6 @@ function printPage() {
                 });
             });
     });
-  
 
 //Pagination for Home Page
   document.addEventListener('DOMContentLoaded', function () {
@@ -153,7 +152,16 @@ function saveRole() {
         }
     }
   }
-  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('print-btn').addEventListener('click', function() {
+        const path = "pdf/summary.pdf";
+        const printWindow = window.open(path, '_blank');
+        printWindow.addEventListener('load', function() {
+          printWindow.print();
+        });
+    });
+  })
   
   window.addEventListener("load", loadSelectedRole);
   
