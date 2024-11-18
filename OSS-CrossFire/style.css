@@ -817,23 +817,11 @@ label {
     resize: vertical;
     border-radius: 8px;
     padding: 0.60rem 1.12rem; 
-<<<<<<< Updated upstream
     min-height: calc(1.5em + .75rem + 2px);
-=======
-    min-height: calc(1.5em + .75rem + 2px); 
-    max-height: calc(10em + 2rem); 
-    line-height: 1.2;
-    font-size: 1rem;
->>>>>>> Stashed changes
 }
 
 
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 /* Input Styles */
 input[type="text"],
 input[type="number"],
@@ -1080,14 +1068,6 @@ input:disabled, textarea:disabled, select:disabled {
     margin: 0 40px;
     height: 0;
     overflow: hidden;
-<<<<<<< HEAD
-<<<<<<< HEAD
- 
-=======
-    z-index: -1;
->>>>>>> parent of 2ed07c9 (Updated Faq)
-=======
->>>>>>> parent of 33dae88 (Merge branch 'master' of https://github.com/NyleNC/OSSProg1180)
     position: relative;
     opacity: 0;
     -webkit-transition: .4s ease;
