@@ -618,10 +618,18 @@ position: absolute;
 }
 
 .navbar-pages li:nth-of-type(even) {
-    border-right: 2px solid #0F0F0F; /* Specify style */
+    border-right: 0px solid #0F0F0F; /* Specify style */
     border-left: 2px solid #0F0F0F; /* Specify style */
 }
 
+.navbar-pages li:last-of-type{
+    border-right: 2px solid #0f0f0f;
+}
+
+.navbar-pages li:nth-of-type(odd){
+    border-right: 0px solid #0f0f0f;
+    border-left: 2px solid #0f0f0f;
+}
 .navbar-pages a {
     color: #0F0F0F;
     text-decoration: none;
