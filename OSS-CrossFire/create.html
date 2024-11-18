@@ -28,7 +28,6 @@
                     <i class='bx bxs-user' aria-hidden="true"></i>
                     <p>Employee Name</p>
                 </div>
-             
             </div>
         </div>
 
@@ -64,10 +63,170 @@
         <h1>Create NCR</h1>
         <p class="edit-p">&nbsp; Please fill out the NCR form below and submit it for processing. Required fields are marked with an asterisk (*).</p>
 
+<<<<<<< Updated upstream
         <div class="ncrSection">
             <div class="ncrSection-title">
                 Quality Representative
                 <span>+</span>
+=======
+        <form id="ncr-form" onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Quality Representative Portion</legend>
+                
+                <div class="form-ncrNum">
+                    <label for="ncrNumber">NCR #:</label>
+                    <span id="ncrNumber">NCR-</span>
+                </div>
+                <div class="form-ncrDate">
+                    <label for="ncrDate">NCR Date:</label>
+                    <span id="ncrDate"></span>
+                </div><br>
+
+                <div class="lblIdf">
+                    <label>Identify Process Applicable:</label>
+                </div>
+                <div class="form-ipa1">
+                    <input type="radio" id="supp" name="process" value="suppotRec" onclick="enableDisableTextbox(this)">
+                    <label for="supp">Supplier or Receiving Inspection</label><br>
+                </div>
+                <div class="form-ipa2">
+                    <input type="radio" id="wip" name="process" value="supplier" onclick="enableDisableTextbox(this)">
+                    <label for="wip">WIP (Production Order)</label>
+                </div><br>   
+
+                <div class="form-group">
+                    <label for="supplierName">Supplier Name: *</label>&nbsp;&nbsp;
+                    <input type="text" id="supplierName" class="size-css" required pattern="[a-zA-Z ]{2,30}" title="Please enter a valid name (letters only).">
+                </div>
+
+                <div class="form-group">
+                    <div class="left-side">
+                        <label for="ProductNo">PO or Product No.: *</label>
+                        <input type="text" id="ProductNo" required pattern="\d{5}" title="Please enter exactly 5 digits.">
+                    </div>
+                    <div class="left-side">
+                        <label for="SaleOrderNo">Sales Order No.: *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="text" id="SaleOrderNo" required pattern="\d{5}" title="Please enter exactly 5 digits.">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="right-side">
+                        <label for="quantityReceived">Quantity Received: *</label>
+                        <input type="number" id="quantityReceived" required min="1" title="Please enter a valid quantity.">
+                    </div>
+                    <div class="right-side">
+                        <label for="quantityDefective">Quantity Defective: *</label>
+                        <input type="number" id="quantityDefective" required min="0" title="Please enter a valid quantity.">
+                    </div>
+                </div>
+
+                <div class="form-ta-itemDes">
+                    <label for="itemDescription">Description of Item (including SAP No.): *</label><br>
+                    <textarea id="itemDescription" maxlength="3000" required></textarea>
+                </div><br>
+                
+                <div class="form-ta-defDes">
+                    <label for="defectDescription">Description of Defect (should be descriptive): *</label><br>
+                    <textarea id="defectDescription" required></textarea>
+                </div>
+                
+                <div class="lblImn">
+                    <label>Item marked Nonconforming:</label>
+                </div>
+                <div class="form-Yes">
+                    <input id="imnYes" name="nonconforming" type="radio" value="yes">
+                    <label for="imnYes">Yes</label>
+                </div>
+                <div class="form-No">
+                    <input id="imnNo" name="nonconforming" type="radio" value="no">
+                    <label for="imnNo">No</label>
+                </div><br>                
+
+                <div class="form-group">
+                    <label for="roleInCharge">Role In Charge: *</label>
+                    <select id="roleInCharge" class="size-css" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="Qr">Quality Representative</option>
+                        <option value="Eng">Engineer</option>
+                        <option value="Op">Operations Manager</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Engineering Portion -->
+            <fieldset class="enginerSection">
+                <legend>Engineering Portion</legend>
+                <label for="cfReview">Review by CF Engineering: *</label><br><br>
+                
+                <div class="checkbox-group">
+                    <div class="left-checkboxes">
+                        <input type="checkbox" id="useAsIs" name="disposition" value="UseAsIs">
+                        <label for="useAsIs">Use As Is</label>
+            
+                        <input type="checkbox" id="repair" name="disposition" value="Repair">
+                        <label for="repair">Repair</label><br>
+                    </div>
+            
+                    <div class="right-checkboxes">
+                        <input type="checkbox" id="rework" name="disposition" value="Rework">
+                        <label for="rework">Rework</label>
+            
+                        <input type="checkbox" id="scrap" name="disposition" value="Scrap">
+                        <label for="scrap">Scrap</label><br>
+                    </div>
+                </div>
+
+                <p>Does customer require notification of NCR? *</p>
+                <label>
+                    <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-yes" value="Yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-no" value="No" required> No
+                </label><br><br>
+
+                <div class="form-ta-engeDesc">
+                    <label for="engEngineering"><strong>Description</strong> (Sequence of work steps required when "repair" or "rework" indicated): *</label><br>
+                    <textarea id="engEngineering" maxlength="3000" required></textarea>
+                </div><br>
+
+                <p>Does the drawing require updating? *</p>
+                <label>
+                    <input type="radio" name="drawingUpdate" id="drawingUpdateYes" value="Yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="drawingUpdate" id="drawingUpdateNo" value="No" required> No
+                </label><br><br>
+
+                <div class="form-group">
+                    <div class="left-side">
+                        <label for="originalRevNumber">Original Rev. Number: *</label>
+                        <input type="text" id="originalRevNumber" name="originalRevNumber" class="size-css">
+                    </div>
+                    <div class="right-side">
+                        <label for="updatedRevNumber">Updated Rev. Number: *</label>
+                        <input type="text" id="updatedRevNumber" name="updatedRevNumber" class="size-css">
+                    </div>
+                </div>
+
+            
+                <div class="form-group">
+                    <div class="left-side">
+                        <label for="engineerName">Name of Engineer: *</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" id="engineerName" name="engineerName" class="size-css">
+                    </div>
+                    <div class="right-side">
+                        <label for="revisionDate">Revision Date: *</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="date" id="revisionDate" name="revisionDate" class="size-css">
+                    </div>
+            </fieldset>
+
+
+            <div class="btnContainer">
+                <button type="button" class="btnSave" style="display: none;" onclick="saveNCRFormData()">Save</button>
+                <button type="submit" class="btnSubmit">Submit</button>
+                <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
+>>>>>>> Stashed changes
             </div>
             <form class="ncrSection-form" id="ncr-form" onsubmit="return validateForm()">
                 <fieldset>

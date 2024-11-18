@@ -817,11 +817,23 @@ label {
     resize: vertical;
     border-radius: 8px;
     padding: 0.60rem 1.12rem; 
+<<<<<<< Updated upstream
     min-height: calc(1.5em + .75rem + 2px);
+=======
+    min-height: calc(1.5em + .75rem + 2px); 
+    max-height: calc(10em + 2rem); 
+    line-height: 1.2;
+    font-size: 1rem;
+>>>>>>> Stashed changes
 }
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 /* Input Styles */
 input[type="text"],
 input[type="number"],
@@ -957,6 +969,49 @@ input:disabled, textarea:disabled, select:disabled {
     cursor: not-allowed;        
     opacity: 0.6;              
 }
+
+
+
+
+.checkbox-group {
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.left-checkboxes,
+.right-checkboxes {
+    display: flex;
+    flex-direction: row;
+    width: 45%; 
+}
+
+.left-checkboxes label,
+.right-checkboxes label {
+    font-size: 1em;
+    color: #173451;
+    margin-top: 3.5px;
+}
+
+.left-checkboxes input[type="checkbox"],
+.right-checkboxes input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
+.left-checkboxes div,
+.right-checkboxes div {
+    display: inline-flex;
+    align-items: center;
+}
+
+.left-checkboxes input[type="checkbox"]:focus,
+.right-checkboxes input[type="checkbox"]:focus {
+    outline: 2px solid #5897c9;
+}
+
 
 
 

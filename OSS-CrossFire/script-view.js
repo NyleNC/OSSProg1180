@@ -121,3 +121,53 @@ function enableDisableTextbox(e){
     productNo.disabled=false;
   }
 }
+
+
+// For Saving a form.
+function saveFormToStorage() {
+  const form = document.getElementById("ncr-form");
+  const formData = {};
+
+  Array.from(form.elements).forEach(element => {
+      if (element.name) {
+          formData[element.name] = element.value;
+      }
+  });
+
+  localStorage.setItem("ncrFormData", JSON.stringify(formData));
+}
+
+function loadFormFromStorage() {
+  const savedData = JSON.parse(localStorage.getItem("ncrFormData"));
+
+  if (savedData) {
+      const form = document.getElementById("ncr-form");
+
+      Object.keys(savedData).forEach(name => {
+          const field = form.elements[name];
+          if (field) {
+              field.value = savedData[name];
+          }
+      });
+  }
+}
+
+document.getElementById("ncr-form").addEventListener("input", saveFormToStorage);
+
+window.addEventListener("load", loadFormFromStorage);
+
+
+// For Debouncing input event.
+let debounceTimeout;
+document.getElementById("ncr-form").addEventListener("input", () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(toggleSaveButton, 300); // 300ms delay
+});
+
+// Clear the saved data after submiting
+function clearStorageOnSubmit() {
+  localStorage.removeItem("ncrFormData");
+}
+document.getElementById("ncr-form").addEventListener("submit", clearStorageOnSubmit);
+
+
