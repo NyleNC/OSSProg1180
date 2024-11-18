@@ -121,3 +121,91 @@ function enableDisableTextbox(e){
     productNo.disabled=false;
   }
 }
+
+
+// Function to enable/disable textarea based on selected radio button
+function enaDisTextboxForEng(e) {
+  const engDescription = document.getElementById("engEngineering");
+
+  // Disable the textarea by default
+  engDescription.disabled = true;
+
+  // Enable the textarea only if "repair" or "rework" is selected
+  if (e.id === "repair" || e.id === "rework") {
+      engDescription.disabled = false;
+  }
+}
+
+// Add event listeners to the radio buttons
+document.addEventListener("DOMContentLoaded", function () {
+  const repairRadio = document.getElementById("repair");
+  const reworkRadio = document.getElementById("rework");
+  const otherRadios = [document.getElementById("useAsIs"), document.getElementById("scrap")];
+
+  // Attach event listener to "repair" and "rework" radio buttons
+  repairRadio.addEventListener("change", function () {
+      enaDisTextboxForEng(this);
+  });
+
+  reworkRadio.addEventListener("change", function () {
+      enaDisTextboxForEng(this);
+  });
+
+  // Attach event listener to other radio buttons to ensure the textarea is disabled
+  otherRadios.forEach(radio => {
+      radio.addEventListener("change", function () {
+          enaDisTextboxForEng(this);
+      });
+  });
+});
+
+
+
+
+// For Saving a form.
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("#ncr-form");
+  const saveButton = document.querySelector(".btnSave");
+  let isFormDirty = false;
+
+  // Show save button when the user starts filling the form
+  form.addEventListener("input", function () {
+      if (!isFormDirty) {
+          isFormDirty = true;
+          saveButton.style.display = "inline-block"; // Show save button
+      }
+  });
+
+  // Save form data to localStorage
+  saveButton.addEventListener("click", function () {
+      const formData = new FormData(form);
+      const dataToSave = {};
+
+      // Convert form data to an object
+      for (const [key, value] of formData.entries()) {
+          dataToSave[key] = value;
+      }
+
+      localStorage.setItem("ncrFormData", JSON.stringify(dataToSave));
+      alert("Form data saved!");
+  });
+
+  // Warn the user if they try to navigate away with unsaved changes
+  window.addEventListener("beforeunload", function (event) {
+      if (isFormDirty) {
+          event.preventDefault();
+          event.returnValue = ""; 
+      }
+  });
+
+  // Pre-fill the form if saved data exists
+  const savedData = JSON.parse(localStorage.getItem("ncrFormData"));
+  if (savedData) {
+      for (const [key, value] of Object.entries(savedData)) {
+          const field = form.elements[key];
+          if (field) {
+              field.value = value;
+          }
+      }
+  }
+});
