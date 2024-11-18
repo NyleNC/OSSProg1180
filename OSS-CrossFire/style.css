@@ -318,7 +318,8 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .column {
-    margin: 2em 10%;
+    padding: 2em 0;
+    margin: 0em 10%;
     display: grid;
     grid-template-columns: 40% 60%;
     gap: 2em;
@@ -442,9 +443,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif; 
-    background-color: #d7ddee; 
+    background-color: #f3fafe; 
 }
 
+main{
+    background-color: #ced9e1;
+    margin: 0;
+    padding: 0;
+}
 /* Header Styles */
 .global-header {
     display: grid;
@@ -463,9 +469,41 @@ body {
 }
 
 /* Form Input Styles */
+.ncrSection-title{
+    cursor: pointer;
+    background-color: #68b1fa;
+    color: #002449;
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 30px;
+    font-weight: bold;
+    border:3px solid #322f4a;
+    border-radius: 1em;
+    margin: 20px 0 0;
+}
+.ncrSection-title span{
+    margin-left: 15px;
+    font-weight: bolder;
+}
+
+.active .ncrSection-title span{
+    rotate: 50deg;
+}
+.ncrSection-form{
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.active .ncrSection-form{
+    max-height: fit-content;
+    margin: 0;
+}
+
 .form-input {
     display: inline-flex;
     white-space: nowrap;
+
 }
 
 .form-input button {
@@ -672,7 +710,7 @@ opacity: 100;
 /* Sahil's CSS */
 /* Main elements for forms */
 .create-main {
-    padding: 25px 50px; 
+    padding:  2em 10%;
     background-color: #e5ecf4; 
     border-radius: 8px;
 }
@@ -850,14 +888,22 @@ textarea {
     background-color: #c9302c;
 }
 
-.btnEdit,
-.btnSave {
+.btnEdit {
     background-color: #5897c9; 
     color: white;
 }
 
-.btnEdit:hover,
-.btnSave:hover {
+
+.btnSave{
+    background-color: #0eae00; 
+    color: white;
+}
+
+.btnSave:hover{
+    background-color: #0c8d00; 
+}
+
+.btnEdit:hover {
     background-color: #4a80b2; 
 }
 
@@ -917,8 +963,8 @@ input:disabled, textarea:disabled, select:disabled {
 
 /* FAQ CSS */
 .faq-content {
-    margin: 60px 200px;
-    padding-bottom: 10px;
+    padding: 60px 200px;
+    padding-bottom: 100px;
 }
 
 .faq-content h1{
@@ -979,7 +1025,14 @@ input:disabled, textarea:disabled, select:disabled {
     margin: 0 40px;
     height: 0;
     overflow: hidden;
+<<<<<<< HEAD
+<<<<<<< HEAD
+ 
+=======
     z-index: -1;
+>>>>>>> parent of 2ed07c9 (Updated Faq)
+=======
+>>>>>>> parent of 33dae88 (Merge branch 'master' of https://github.com/NyleNC/OSSProg1180)
     position: relative;
     opacity: 0;
     -webkit-transition: .4s ease;

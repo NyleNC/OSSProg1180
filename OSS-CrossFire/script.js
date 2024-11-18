@@ -59,6 +59,9 @@ function printPage() {
             });
     });
 
+    
+  
+
 //Pagination for Home Page
   document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 5; // Number of items to display per page
