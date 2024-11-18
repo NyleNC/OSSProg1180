@@ -463,9 +463,41 @@ main{
 }
 
 /* Form Input Styles */
+.ncrSection-title{
+    cursor: pointer;
+    background-color: #68b1fa;
+    color: #002449;
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 30px;
+    font-weight: bold;
+    border:3px solid #322f4a;
+    border-radius: 1em;
+    margin: 20px 0 0;
+}
+.ncrSection-title span{
+    margin-left: 15px;
+    font-weight: bolder;
+}
+
+.active .ncrSection-title span{
+    rotate: 50deg;
+}
+.ncrSection-form{
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.active .ncrSection-form{
+    max-height: fit-content;
+    margin: 0;
+}
+
 .form-input {
     display: inline-flex;
     white-space: nowrap;
+
 }
 
 .form-input button {

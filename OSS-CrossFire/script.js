@@ -58,6 +58,8 @@ function printPage() {
                 });
             });
     });
+
+    
   
 
 //Pagination for Home Page
