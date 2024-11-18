@@ -13,6 +13,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <script src="script-create.js"></script>
+    <script src="script-view.js"></script>
 </head>
 <body>
     <header>
@@ -57,6 +58,7 @@
             <div class="navbar-tools">
                 <ul>
                     <li><i class='bx bx-refresh bx-sm' aria-hidden="true"></i><a href="ncr.html">Refresh</a></li>
+                    <li><i class='bx bx-printer bx-sm'></i><a id="print-btn">Print PDF</a></li>
                    <li class="ddlRole">
                     <input placeholder="Select Role" list="roles" name="role" id="roleInput" onchange="saveRole()">
                         <datalist id="roles">
@@ -260,7 +262,5 @@
     <footer class="ncr-footer">
         <p>&copy; 2024 Crossfire. All Rights Reserved.</p>
     </footer>
-
-    <script src="script-view.js"></script>
 </body>
 </html>

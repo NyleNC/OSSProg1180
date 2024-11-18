@@ -12,3 +12,13 @@ ncrSections.forEach(section => {
     })
 })
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('print-btn').addEventListener('click', function() {
+        const path = "pdf/summary.pdf";
+        const printWindow = window.open(path, '_blank');
+        printWindow.addEventListener('load', function() {
+          printWindow.print();
+        });
+    });
+  })
