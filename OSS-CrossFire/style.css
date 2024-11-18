@@ -987,7 +987,6 @@ input:disabled, textarea:disabled, select:disabled {
     margin: 0 40px;
     height: 0;
     overflow: hidden;
-    z-index: -1;
     position: relative;
     opacity: 0;
     -webkit-transition: .4s ease;
