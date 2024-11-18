@@ -59,14 +59,13 @@
             </div>
         </nav>
     </header>
-
+ 
     <main class="create-main">
         <h1>Create NCR</h1>
         <p class="edit-p">&nbsp; Please fill out the NCR form below and submit it for processing. Required fields are marked with an asterisk (*).</p>
 
         <form id="ncr-form" onsubmit="return validateForm()">
             <fieldset>
-                <legend>NCR Applicable Process</legend>
                 
                 <div class="form-ncrNum">
                     <label for="ncrNumber">NCR #:</label>
@@ -150,6 +149,7 @@
             </fieldset>
 
             <div class="btnContainer">
+                <button type="save" class="btnSave">Save</button>
                 <button type="submit" class="btnSubmit">Submit</button>
                 <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
             </div>
