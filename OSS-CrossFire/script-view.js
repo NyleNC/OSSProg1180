@@ -123,6 +123,43 @@ function enableDisableTextbox(e){
 }
 
 
+// Function to enable/disable textarea based on selected radio button
+function enaDisTextboxForEng(e) {
+  const engDescription = document.getElementById("engEngineering");
+
+  // Disable the textarea by default
+  engDescription.disabled = true;
+
+  // Enable the textarea only if "repair" or "rework" is selected
+  if (e.id === "repair" || e.id === "rework") {
+      engDescription.disabled = false;
+  }
+}
+
+// Add event listeners to the radio buttons
+document.addEventListener("DOMContentLoaded", function () {
+  const repairRadio = document.getElementById("repair");
+  const reworkRadio = document.getElementById("rework");
+  const otherRadios = [document.getElementById("useAsIs"), document.getElementById("scrap")];
+
+  // Attach event listener to "repair" and "rework" radio buttons
+  repairRadio.addEventListener("change", function () {
+      enaDisTextboxForEng(this);
+  });
+
+  reworkRadio.addEventListener("change", function () {
+      enaDisTextboxForEng(this);
+  });
+
+  // Attach event listener to other radio buttons to ensure the textarea is disabled
+  otherRadios.forEach(radio => {
+      radio.addEventListener("change", function () {
+          enaDisTextboxForEng(this);
+      });
+  });
+});
+
+
 
 
 // For Saving a form.
@@ -150,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       localStorage.setItem("ncrFormData", JSON.stringify(dataToSave));
-      alert("Form data saved locally!");
+      alert("Form data saved!");
   });
 
   // Warn the user if they try to navigate away with unsaved changes
