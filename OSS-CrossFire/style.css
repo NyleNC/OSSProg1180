@@ -64,15 +64,12 @@
 
 .employee-info{
     white-space: nowrap;
+    margin-top: 10px;
 }
-.employee-info i{
 
-}
 .employee-info p {
-    font-size: 15px;
+    font-size: 14px;
     display: inline-block;
-    margin: 16px 0 20px 0 ;
-    padding-bottom: 20px;
 }
 
 .settings {
@@ -497,23 +494,26 @@ body {
 .toggle-checkbox-notif{
 display: none;
 }
+
 .notification-box{
 display: none;
 position: absolute;
-  top: 40px;
-  right: 0;
-  width: 200px;
-  padding: 10px;
+  top: 60px;
+  right: 20px;
+  width: 280px;
+  padding: 1px;
+  padding-bottom: 10px;
   background-color: #0f406d;
   border: 2px solid #173451;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 30px 0px rgba(7, 31, 59, 0.8);
   border-radius: 5px;
   z-index: 1000;
 }
 
 .notification-box-title{
     display: flex;
-    
+    border-radius: 0px;
+    padding: 6px 20px;
     font: sans-serif;
     color: #eff6ff;
 }
@@ -521,17 +521,24 @@ position: absolute;
     display: block;
 }
 
-
-
-.employee-info {
-    white-space: nowrap;
+.toggle-checkbox-notif:checked + .bell + .notification-box ul{
+    list-style: none;
+    
+    padding: 0px 6px;
+    margin-top: 3px;
+    margin-bottom: 1px;
 }
 
-.employee-info p {
-    font-size: 15px;
-    display: inline-block;
-    margin: 16px 0 20px 0;
-    padding-bottom: 20px;
+.notification-box li:nth-of-type(odd){
+    background-color: #b8dbff;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.notification-box li:nth-of-type(even){
+    background-color: #8fb5dc;
+    padding: 10px;
+    font-size: 13px;
 }
 
 /* Settings and Global Selection Styles */
@@ -992,6 +999,7 @@ input:disabled, textarea:disabled, select:disabled {
 
   .home-ncr-notification{
     border-radius: 1.5em;
+    margin-bottom: 5px;
     overflow: hidden;
     background-color: #f9f9f9;
     
@@ -1060,6 +1068,9 @@ input:disabled, textarea:disabled, select:disabled {
     padding: 0;
     max-height: 0px;
     overflow: hidden; 
+    display: block;
+
+
     background-color: #e8e8e8;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -1069,6 +1080,11 @@ input:disabled, textarea:disabled, select:disabled {
     max-height: 400px;
     border: 2px solid #9a9999;
     border-top: 0;
+    display: block;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    padding-bottom: 25px;
   }
 
   .active .home-all-ncr-section-select{
@@ -1105,15 +1121,21 @@ input:disabled, textarea:disabled, select:disabled {
     padding: 20px;
     font-weight: bold;
     background-color: #73b4f9;
-    border-top-right-radius: 1.5em;
-    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.1em;
+    border-top-left-radius: 1.1em;
     margin-bottom: 10px;
     display: flex;
     margin-top: 0;
   }
 
   .home-other-ncr .content{
-    margin: 0 10px 20px;
+    margin: 0 10px;
+    display: block;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    padding-bottom: 25px;
+    max-height: auto  ;
   }
 
   .home-other-ncr-chart{
@@ -1127,7 +1149,7 @@ input:disabled, textarea:disabled, select:disabled {
   }
 
   .ncrPiechart {
-    margin: 10px 30px;
+    margin: 10px 50px 25px;
   }
   
   .home-chart-title{
