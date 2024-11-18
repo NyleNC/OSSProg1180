@@ -340,6 +340,7 @@ input::-webkit-calendar-picker-indicator {
 .ncr-footer{
     display: block;
     padding-bottom: 30px;
+    padding-top: 2em;
 }
 
 main{
@@ -722,6 +723,7 @@ opacity: 100;
     padding:  2em 10%;
     background-color: #e5ecf4; 
     border-radius: 8px;
+    min-height: 43em;
 }
 
 .ncr-main{
@@ -860,10 +862,10 @@ textarea {
 
 /* Button Container */
 .btnContainer {
-    display: flex; 
+    display: block; 
     justify-content: flex-start; 
     margin-top: 20px; 
-}
+}   
 
 /* Button Styles */
 .btnSubmit,
