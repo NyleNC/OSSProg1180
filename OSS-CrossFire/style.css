@@ -950,7 +950,11 @@ input:disabled, textarea:disabled, select:disabled {
     margin: 0 40px;
     height: 0;
     overflow: hidden;
+<<<<<<< HEAD
  
+=======
+    z-index: -1;
+>>>>>>> parent of 2ed07c9 (Updated Faq)
     position: relative;
     opacity: 0;
     -webkit-transition: .4s ease;
