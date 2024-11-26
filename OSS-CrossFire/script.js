@@ -170,3 +170,25 @@ function saveRole() {
   
   
 //   document.getElementById("roleInput").addEventListener("change", saveRole);
+
+
+
+// login js script
+const loginForm = document.getElementById("login");
+const loginButton = document.getElementById("submit");
+
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.user.value;
+    const password = loginForm.pass.value;
+
+
+    if (username === "Admin" && password === "1234") {
+        alert("You have successfully logged in.\nWelcome\n"+username);
+        window.location.href ="ncr.html"
+    } else {
+     
+        alert("Username and password are incorrect");
+    }
+})
