@@ -1314,14 +1314,14 @@ input:disabled, textarea:disabled, select:disabled {
     background: #3a8fff;
   }
  .container{
-    margin: 10px;
+   
     padding: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('img/Crossfire-Logo-no-bkgd.png');
     background-repeat: no-repeat;
- 
+    background-color:   #a3d6ff88;
     background-size: 500px ;
     background-position: top;
     
@@ -1378,12 +1378,17 @@ input:disabled, textarea:disabled, select:disabled {
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    background: linear-gradient(-135deg, #509ac8, #4158d0);
+    background: #509ac8;
     transition: all 0.3s ease;
+    text-decoration: none;
+    outline: none;
   }
   form .field input[type="submit"]:active{
     transform: scale(0.95);
   }
+
+
+
 #submit{
    margin-top: 50px;
 }
@@ -1415,7 +1420,8 @@ input:disabled, textarea:disabled, select:disabled {
     box-shadow: 0 2px #999;
 }
 
-.button:hover {background-color: #3e5d8e}
+.button:hover {background-color: #b3bdcc}
+
 /* CSS */
 
 
