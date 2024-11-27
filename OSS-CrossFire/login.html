@@ -3,12 +3,76 @@
     <head>
         <meta charset="utf-8">
         <title>Login</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
 
-    <body class="container" >
-
+    <body >
+        <header>
+            <div class="global-header">
+                <div class="logo">
+                    <img src="img/Crossfire-Logo-no-bkgd.png" alt="CrossFire Logo">
+                </div>
+                <div class="global-selection">
+                    <div class="notifications">
+                        <input type="checkbox" id="notification-toggle" class="toggle-checkbox-notif"/>
+                        <label for="notification-toggle" class="bell"><i class='bx bx-bell bx-sm'></i></label>
+                        
+                        <div class="notification-box">
+                            <div class="notification-box-title">Notifications</div>
+                            <div class="notification-box-items">
+                                <ul>
+                                    <li>Notification 1</li>
+                                    <li>Notification 2</li>
+                                    <li>Notification 3</li>
+                                </ul>
+                            </div>
+                    
+                        </div>
+            
+                    
+                    </div>
+                   
+                        <div class="employee-info">
+                            <i class='bx bxs-user bx-sm'></i>
+                            <p>Employee Name</p>
+                        </div>
+                        <div class="logDiv">
+                            <a href="login.html"><button class="button">Login</button></a>
+                        </div>
+                </div>
+            </div>
+    
+            <nav>
+                <div class="navbar-pages">
+                    <ul>
+                        <li class="active"><a href="index copy.html">Home</a></li>
+                        <li><a href="ncr.html">NCR</a></li>
+                        <li><a href="create.html">Create</a></li>
+                         <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-tools">
+                    <ul>
+                        <li><i class='bx bx-refresh bx-sm'></i><a href="ncr.html">Refresh</a></li>
+                        <li><i class='bx bx-printer bx-sm'></i><a href="#" onclick="printPage(); return false;">Print</a></li>                 
+                      <li class="ddlRole">
+                            <input placeholder="Select Role" list="roles" name="role" id="roleInput" onchange="saveRole()">
+                            <datalist id="roles">
+                                <option value="Quality Rep">
+                                <option value="Engineer">
+                                <option value="Operations Manager">
+                                <option value="Inspector">
+                                <option value="Procurement ">
+                                <option value="Administrator">
+                            </datalist>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+ <div class="container">
         <div class="wrapper">
             <div class="title">
                 Login
@@ -27,12 +91,14 @@
                 </div>
             </form>
         </div>
+
+    </div>
         <div class="foot">
             <footer class="ncr-footer">
                 <p>&copy; 2024 Crossfire. All Rights Reserved.</p>
                 
             </footer>
         </div>
-    </body>
- 
+    </div>
+    </body> 
     </html>

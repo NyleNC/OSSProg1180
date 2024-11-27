@@ -185,10 +185,15 @@ loginButton.addEventListener("click", (e) => {
 
 
     if (username === "Admin" && password === "1234") {
+      
         alert("You have successfully logged in.\nWelcome\n"+username);
+        sessionStorage.setItem('selectedRole', 'Administrator');
         window.location.href ="ncr.html"
+       
+      
+       
     } else {
      
         alert("Username and password are incorrect");
     }
-})
+});
