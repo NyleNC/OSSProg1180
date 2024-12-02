@@ -883,12 +883,12 @@ textarea {
 }
 
 .btnSubmit {
-    background-color: #5897c9; 
+    background-color: #2db720; 
     color: white; 
 }
 
 .btnSubmit:hover {
-    background-color: #4a80b2; 
+    background-color: #1a970f; 
 }
 
 .btnCancel {
@@ -907,12 +907,12 @@ textarea {
 
 
 .btnSave{
-    background-color: #0eae00; 
+    background-color: #f88921; 
     color: white;
 }
 
 .btnSave:hover{
-    background-color: #0c8d00; 
+    background-color: #d47317; 
 }
 
 .btnEdit:hover {
@@ -973,27 +973,27 @@ input:disabled, textarea:disabled, select:disabled {
 
 
 
-.checkbox-group {
+.radio-group {
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.left-checkboxes,
-.right-checkboxes {
+.left-radio,
+.right-radio {
     display: flex;
     flex-direction: row;
     width: 45%; 
 }
 
-.left-checkboxes label,
-.right-checkboxes label {
+.left-radio label,
+.right-radio label {
     font-size: 1em;
     color: #173451;
     margin-top: 3.5px;
 }
 
-.left-checkboxes input[type="checkbox"],
-.right-checkboxes input[type="checkbox"] {
+.left-radio input[type="checkbox"],
+.right-radio input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin-right: 5px;
@@ -1001,14 +1001,14 @@ input:disabled, textarea:disabled, select:disabled {
 }
 
 
-.left-checkboxes div,
-.right-checkboxes div {
+.left-radio div,
+.right-radio div {
     display: inline-flex;
     align-items: center;
 }
 
-.left-checkboxes input[type="checkbox"]:focus,
-.right-checkboxes input[type="checkbox"]:focus {
+.left-radio input[type="checkbox"]:focus,
+.right-radio input[type="checkbox"]:focus {
     outline: 2px solid #5897c9;
 }
 
