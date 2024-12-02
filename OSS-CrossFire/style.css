@@ -1401,14 +1401,13 @@ input:disabled, textarea:disabled, select:disabled {
 .logDiv{
     margin-top: 15px;
     margin-left: 15px;
-    display: inline-flex;
+    display: flex;
     justify-content: right;
-   
-   
+
 }
 .button{
     display: inline-block;
-    padding: 3px 25px;
+    padding: 3px 15px;
     font-size: 15px;
     cursor: pointer;
     text-align: center;
@@ -1418,6 +1417,7 @@ input:disabled, textarea:disabled, select:disabled {
     background-color: #509ac8;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+    
 }
 
 .button:hover {background-color: #b3bdcc}

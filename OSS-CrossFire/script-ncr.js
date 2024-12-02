@@ -75,11 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
         setupPagination(tableContent);
     });
 });
+
+// roles js
 function saveRole() {
-    const selectedRole = document.getElementById("roleInput").value;
-    sessionStorage.setItem('selectedRole', selectedRole);
-  }
-  function saveRole() {
     const selectedRole = document.getElementById("roleInput").value;
     sessionStorage.setItem('selectedRole', selectedRole);
   }
@@ -88,17 +86,78 @@ function saveRole() {
   
     if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
         sessionStorage.removeItem('selectedRole');
-    } else {
+    } 
+    else {
         const selectedRole = sessionStorage.getItem('selectedRole');
+        const username = sessionStorage.getItem('username');
         if (selectedRole) {
             document.getElementById("roleInput").value = selectedRole;
         }
+        if (username) {
+            document.getElementById("user").textContent=username }
     }
   }
-  
+
+
   
   window.addEventListener("load", loadSelectedRole);
   
   
-  document.getElementById("roleInput").addEventListener("change", saveRole);
-  
+//   document.getElementById("roleInput").addEventListener("change", saveRole);
+
+
+
+// login js script
+const loginForm = document.getElementById("login");
+const loginButton = document.getElementById("submit");
+
+function validateLogin() {
+    const username = loginForm.user.value;
+    const password = loginForm.pass.value;
+
+    if(username ==="" &&password===""){
+        alert("You must input a username and password");
+        return;
+    }
+    else if (username === "Admin" && password === "1234") {
+        alert("You have successfully logged in.\nWelcome\n" + username);
+        sessionStorage.setItem('selectedRole', 'Administrator');
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('password', password);
+        window.location.href = "ncr.html";
+    } 
+    else if (username !== "Admin") {
+        alert("Username is incorrect");
+    } 
+    else if (password !== "1234") {
+        alert("Incorrect Password");
+    }
+ 
+};
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    validateLogin();
+});
+
+// Add event listener for Enter key (key code 13)
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault(); 
+        validateLogin(); 
+    }
+});
+
+function logout() {
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('password');
+    sessionStorage.removeItem('selectedRole');
+    window.location.href = "login.html"; 
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const logoutButton = document.getElementById("logout");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", logout);
+    }
+});
