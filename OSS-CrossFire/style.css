@@ -1295,7 +1295,7 @@ input:disabled, textarea:disabled, select:disabled {
 /* Login css*/
 .wrapper{
     width: 600px;
-    height: 600px;
+    height: 500px;
     border-radius: 15px;
     box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
     background: white;
@@ -1304,7 +1304,7 @@ input:disabled, textarea:disabled, select:disabled {
     
   }
   .wrapper .title{
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 600;
     text-align: center;
     line-height: 80px;
@@ -1314,7 +1314,7 @@ input:disabled, textarea:disabled, select:disabled {
     background: #3a8fff;
   }
  .container{
-   
+    font-family: 'Courier New', Courier, monospace;
     padding: 150px;
     display: flex;
     justify-content: center;
@@ -1324,9 +1324,6 @@ input:disabled, textarea:disabled, select:disabled {
     background-color:   #a3d6ff88;
     background-size: 500px ;
     background-position: top;
-    
-
-    
   }
 
   .wrapper form{
@@ -1335,7 +1332,7 @@ input:disabled, textarea:disabled, select:disabled {
   .wrapper form .field{
     height: 50px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 45px;
     position: relative;
   }
   .wrapper form .field input{
@@ -1347,6 +1344,7 @@ input:disabled, textarea:disabled, select:disabled {
     border: 1px solid lightgrey;
     border-radius: 20px;
     transition: all 0.3s ease;
+    margin-top: 25px;
   }
 
 
@@ -1360,6 +1358,7 @@ input:disabled, textarea:disabled, select:disabled {
     pointer-events: none;
     transform: translateY(-50%);
     transition: all 0.3s ease;
+    margin-top: 25px;
   }
   form .field input:focus ~ label,
   form .field input:valid ~ label{
@@ -1368,8 +1367,12 @@ input:disabled, textarea:disabled, select:disabled {
     color: #4158d0;
     background: #fff;
     transform: translateY(-50%);
-  }
+  } 
+  form .field input:user-invalid {
+  border: 2px solid red;
+}
 
+  
   form .field input[type="button"]{
     color: #fff;
     border: none;
@@ -1378,7 +1381,7 @@ input:disabled, textarea:disabled, select:disabled {
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    background: #509ac8;
+    background: #058fe4;
     transition: all 0.3s ease;
     text-decoration: none;
     outline: none;
@@ -1399,7 +1402,7 @@ input:disabled, textarea:disabled, select:disabled {
    
 }
 .logDiv{
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 15px;
     display: flex;
     justify-content: right;

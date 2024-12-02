@@ -1,39 +1,102 @@
-// Pagination for NCR Table
-document.addEventListener('DOMContentLoaded', function () {
-    const itemsPerPage = 15; // Number of items to display per page
+//Print page
+function printPage() {
+    window.print();
+  }
 
-    // function to create pagination for each table
+  //Piechart
+  window.onload = function()
+    {
+
+        const ctx = document.getElementById('NcrChart');
+
+        new Chart(ctx, 
+        {
+            type: 'pie',
+            data: 
+            {
+                labels: [
+                'New',
+                'Pending',
+                'Completed'
+                ],
+                datasets: [{
+                label: 'NCRs',
+                data: [2, 5, 3],
+                backgroundColor: [
+                    '#ff3b35',
+                    '#ff7b00',
+                    '#1fbd10'
+                ],
+                hoverOffset: 4
+                }]
+            }, option: {
+                responsive: false
+            }
+        });
+    }
+  // Collapse and Enlarge
+  /*const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
+ 
+  homeNcrBoxes.forEach(box => {
+    box.addEventListener('click', function () {
+        console.log(box + "test");
+        });
+    });*/
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all elements with the class .home-ncr-box
+        const homeNcrBoxes = document.querySelectorAll('.home-ncr-box');
+      
+            homeNcrBoxes.forEach(box => {
+                const homeNcrSelect = box.querySelector(".home-all-ncr-section-select");
+                const homeNcrContent = box.querySelector(".content");
+
+                homeNcrSelect.addEventListener('click', function () {
+                    console.log("clicked");
+                    box.classList.toggle("active");
+    
+                });
+            });
+    });
+
+    
+  
+
+//Pagination for Home Page
+  document.addEventListener('DOMContentLoaded', function () {
+    const itemsPerPage = 5; // Number of items to display per page
+
+    // Function to create pagination for a specific table
     function setupPagination(tableContent) {
         const itemsArray = Array.from(tableContent.getElementsByTagName('tr')).slice(1); // Exclude header
         const totalPages = Math.ceil(itemsArray.length / itemsPerPage);
         let currentPage = 0; // Current page starts at 0
         let pageNum; // Declare pageNum for page count display
 
-        // function to show each page
+        // Function to show a specific page
         function showPage(page) {
             const startIndex = page * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
             itemsArray.forEach((item, index) => {
                 item.classList.toggle('hidden', index < startIndex || index >= endIndex);
             });
-            updatePageCounter(); // update page counter display
+            updatePageCounter(); // Update page counter display
         }
 
-        // function to update page counter
+        // Function to update the page counter
         function updatePageCounter() {
             if (pageNum) {
                 pageNum.textContent = `Page ${currentPage + 1} out of ${totalPages} pages`;
             }
         }
 
-        // function to create pagination buttons and total page display 
+        // Create pagination buttons and total page display
         function createPageButtons() {
-            const ncrTable = document.querySelectorAll('.table-content');
             const paginationContainer = document.createElement('div');
             paginationContainer.classList.add('pagination');
-            tableContent.appendChild(paginationContainer); // Append to the parent of the tableContent
+            tableContent.parentNode.appendChild(paginationContainer); // Append to the parent of the tableContent
 
-            // create page counter display
+            // Create page counter display
             pageNum = document.createElement("p");
             pageNum.classList.add('pageCount');
             paginationContainer.appendChild(pageNum); // Append to pagination container
@@ -70,14 +133,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Find all tables with class 'table-content' and set up pagination for each
-    const tables = document.querySelectorAll('#table-ncr');
+    const tables = document.querySelectorAll('.table-content');
     tables.forEach(tableContent => {
         setupPagination(tableContent);
     });
 });
 
-// roles js
-function saveRole() {
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('print-btn').addEventListener('click', function() {
+        const path = "pdf/summary.pdf";
+        const printWindow = window.open(path, '_blank');
+        printWindow.addEventListener('load', function() {
+          printWindow.print();
+        });
+    });
+  })
+
+  function saveRole() {
     const selectedRole = document.getElementById("roleInput").value;
     sessionStorage.setItem('selectedRole', selectedRole);
   }
@@ -111,11 +183,12 @@ function saveRole() {
 const loginForm = document.getElementById("login");
 const loginButton = document.getElementById("submit");
 
+
 function validateLogin() {
     const username = loginForm.user.value;
     const password = loginForm.pass.value;
 
-    if(username ==="" && password===""){
+    if(username ==="" &&password===""){
         alert("You must input a username and password");
         return;
     }
@@ -147,6 +220,7 @@ document.addEventListener("keydown", (e) => {
         validateLogin(); 
     }
 });
+
 
 function logout() {
     sessionStorage.removeItem('username');
