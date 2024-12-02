@@ -213,7 +213,7 @@ loginButton.addEventListener("click", (e) => {
     validateLogin();
 });
 
-// Add event listener for Enter key (key code 13)
+
 document.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault(); 
@@ -221,8 +221,8 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+
 function logout() {
-    if(logoutButton !=null)
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('password');
     sessionStorage.removeItem('selectedRole');
@@ -230,4 +230,3 @@ function logout() {
 }
 
 
-logoutButton.addEventListener("click", logout);

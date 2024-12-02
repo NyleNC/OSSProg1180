@@ -140,7 +140,7 @@ loginButton.addEventListener("click", (e) => {
     validateLogin();
 });
 
-// Add event listener for Enter key (key code 13)
+
 document.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault(); 
@@ -155,9 +155,4 @@ function logout() {
     window.location.href = "login.html"; 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const logoutButton = document.getElementById("logout");
-    if (logoutButton) {
-        logoutButton.addEventListener("click", logout);
-    }
-});
+
