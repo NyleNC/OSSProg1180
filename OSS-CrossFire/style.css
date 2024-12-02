@@ -1354,6 +1354,8 @@ input:disabled, textarea:disabled, select:disabled {
     width: 100%;
     position: relative;
     margin: 45px auto 0;
+    display: block;
+    
   }
   .wrapper form .field input{
     height: 100%;
@@ -1367,10 +1369,6 @@ input:disabled, textarea:disabled, select:disabled {
     margin-top: 25px;
   }
 
-  .wrapper form .field input[type="button"]{
-    width: 60%;
-    margin: 0 auto;
-}
 
 
   .wrapper form .field label{
@@ -1401,11 +1399,12 @@ input:disabled, textarea:disabled, select:disabled {
   }
 
   
-  form .field input[type="button"]{
+   .wrapper form .field input[type="button"]{
     color: #fff;
     border: none;
     padding-left: 0;
-    margin-top: 10px;
+    margin: 45px auto 0;
+    width: 100%;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
@@ -1427,29 +1426,32 @@ input:disabled, textarea:disabled, select:disabled {
   }
 
 
-
-
-
-
 #submit{
-   margin-top: 50px;
+    width: 50%;
+    margin-left: 125px;
 }
+
+
+
+
 .foot{
+    display: block;
     position: fixed;
     bottom: -1px;
+    margin: 0;
     width: 100%;
    
 }
 .logDiv{
-    margin-top: 10px;
+    margin: 19px;
     margin-left: 15px;
-    display: flex;
+    display: block;
     justify-content: right;
 
 }
 .button{
     display: inline-block;
-    padding: 3px 15px;
+    padding: 4px 15px;
     font-size: 15px;
     cursor: pointer;
     text-align: center;
