@@ -74,6 +74,8 @@ function saveForm() {
       if (input.type === 'checkbox') {
           input.disabled = true;
       }
+      document.querySelector('.btnSave').style.display = 'none';
+      document.querySelector('.btnEdit').style.display = 'inline-block';
   });
 
   document.querySelector('.btnSave').style.display = 'none';
@@ -209,3 +211,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   }
 });
+
+function enableEdit(button) {
+  // Hide the clicked button
+  button.style.display = "none";
+  document.querySelector('.btnSave').style.display = 'inline-block';
+}
