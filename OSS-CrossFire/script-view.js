@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 /* -- For Forms --*/
 // For NCR number
 document.addEventListener("DOMContentLoaded", function() {
-  const ncrNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
-  document.getElementById("ncrNumber").textContent = ncrNumber;
+  // const ncrNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
+  // document.getElementById("ncrNumber").textContent = ncrNumber;
 
   // For date
   const today = new Date();
