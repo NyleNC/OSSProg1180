@@ -55,13 +55,16 @@ function goBack() {
   window.history.back();
 }
 
-function enableEdit() {
+function enableEdit(button) {
+  console.log("Edit button clicked!")
   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea, #ncrSor, #ncrWip');
   inputs.forEach(input => {
       input.readOnly = false;
       if (input.type === 'radio') {
           input.disabled = false;
       }
+  button.style.display = "none";
+  document.querySelector('.btnSave').style.display = 'inline-block';
   });
 
   document.querySelector('.btnSave').style.display = 'inline-block';
@@ -74,11 +77,10 @@ function saveForm() {
       if (input.type === 'checkbox') {
           input.disabled = true;
       }
-      document.querySelector('.btnSave').style.display = 'none';
-      document.querySelector('.btnEdit').style.display = 'inline-block';
   });
 
   document.querySelector('.btnSave').style.display = 'none';
+  document.querySelector('.btnEdit').style.display = 'inline-block';
 
   document.getElementById('successPopup').style.display = 'flex';
 }
@@ -105,7 +107,13 @@ function loadSelectedRole() {
 window.addEventListener("load", loadSelectedRole);
 
 
-document.getElementById("roleInput").addEventListener("change", saveRole);
+const roleInput = document.getElementById("roleInput");
+
+if (roleInput) {
+  roleInput.addEventListener("change", saveRole);
+} else {
+  console.log("Element with id 'roleInput' not found.");
+}
 
 
 //
@@ -211,9 +219,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   }
 });
-
-function enableEdit(button) {
-  // Hide the clicked button
-  button.style.display = "none";
-  document.querySelector('.btnSave').style.display = 'inline-block';
-}
