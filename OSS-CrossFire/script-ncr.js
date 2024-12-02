@@ -124,7 +124,7 @@ function validateLogin() {
         sessionStorage.setItem('selectedRole', 'Administrator');
         sessionStorage.setItem('username', username);
         sessionStorage.setItem('password', password);
-        window.location.href = "ncr.html";
+        window.location.href = "index copy.html";
     } 
     else if (username !== "Admin") {
         alert("Username is incorrect");
