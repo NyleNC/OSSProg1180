@@ -321,7 +321,7 @@ input::-webkit-calendar-picker-indicator {
     padding: 2em 0;
     margin: 0em 10%;
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 40% 60%;
     gap: 2em;
     /* gap: 2em;
     padding-right: 5em;
@@ -1440,7 +1440,6 @@ input:disabled, textarea:disabled, select:disabled {
     bottom: -1px;
     margin: 0;
     width: 100%;
-   
 }
 .logDiv{
     margin: 19px;
