@@ -1300,8 +1300,6 @@ input:disabled, textarea:disabled, select:disabled {
     box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
     background: white;
 
- 
-    
   }
   .wrapper .title{
     font-size: 45px;
@@ -1309,47 +1307,36 @@ input:disabled, textarea:disabled, select:disabled {
     text-align: center;
     line-height: 80px;
     color: #fff;
-
     border-radius: 10px 10px 0 0;
     background: #3a8fff;
   }
 
-  .login-page {  
+  .login-header {
 
-    margin: 0;
-    padding: 0
-  }
-
-  .login-header{
-    background-color: #307bde;
-    margin: 0;
-    padding: 0;
-    
-  }
-
-  .login-header div{
-    padding: 30px 0;
-    background-color: #c3e7ff;
-  }
-  
- .container{
-    font-family: 'Courier New', Courier, monospace;
-    padding: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('img/Crossfire-Logo-no-bkgd.png');
-    background-repeat: no-repeat;
-    background-color:   #a3d6ff88;
-    background-size: 500px ;
-    background-position: top;
+    background-color: #a3d6ff88;
     
   }
+  .login-header img{
+    width: 500px;
+  }
 
+ .container{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:   #a3d6ff88;
+    margin: 0 auto;
+    
+  }
   .wrapper form{
     padding: 10px 30px 50px 30px;
   }
-  .wrapper form .field{
+ .field{
     height: 50px;
     width: 100%;
     position: relative;
@@ -1357,7 +1344,7 @@ input:disabled, textarea:disabled, select:disabled {
     display: block;
     
   }
-  .wrapper form .field input{
+.field input{
     height: 100%;
     width: 100%;
     outline: none;
@@ -1368,10 +1355,7 @@ input:disabled, textarea:disabled, select:disabled {
     transition: all 0.3s ease;
     margin-top: 25px;
   }
-
-
-
-  .wrapper form .field label{
+ .field label{
     position: absolute;
     top: 50%;
     left: 20px;
@@ -1383,8 +1367,8 @@ input:disabled, textarea:disabled, select:disabled {
     transition: all 0.3s ease;
     margin-top: 25px;
   }
-  form .field input:focus ~ label,
-  form .field input:valid ~ label{
+.field input:focus ~ label,
+.field input:valid ~ label{
     top: 0%;
     font-size: 16px;
     font-weight: bold;
@@ -1393,17 +1377,14 @@ input:disabled, textarea:disabled, select:disabled {
     transform: translateY(-50%);
   } 
 
-  .wrapper form .field input:focus{
+  .field input:focus{
     border: solid 2px #4158d0;
-
   }
 
-  
-   .wrapper form .field input[type="button"]{
+  .field input[type="button"]{
     color: #fff;
     border: none;
-    padding-left: 0;
-    margin: 45px auto 0;
+    margin: 80px auto;
     width: 100%;
     font-size: 20px;
     font-weight: 500;
@@ -1412,35 +1393,17 @@ input:disabled, textarea:disabled, select:disabled {
     transition: all 0.3s ease;
     text-decoration: none;
     outline: none;
+    width: 50%;
+    display: flex;
   }
-
-  form .field input[type="button"]:hover{
+  
+  #submit{
+    padding: 10px;
+  }
+ .field input[type="button"]:hover{
     background-color: #0062c4;
     border: solid 2px #00366c;
   }
-
-
-
-  form .field input[type="button"]:active{
-    transform: scale(0.95);
-  }
-
-
-#submit{
-    width: 50%;
-    margin-left: 125px;
-}
-
-
-
-
-.foot{
-    display: block;
-    position: fixed;
-    bottom: -1px;
-    margin: 0;
-    width: 100%;
-}
 .logDiv{
     margin: 19px;
     margin-left: 15px;
@@ -1466,10 +1429,5 @@ input:disabled, textarea:disabled, select:disabled {
 .button:hover {background-color: #b3bdcc}
 
 /* CSS */
-
-
-
-
-
 
 /* end of form css */
