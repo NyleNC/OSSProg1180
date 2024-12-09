@@ -16,14 +16,54 @@ document.addEventListener('DOMContentLoaded', function() {
 /* -- For Forms --*/
 // For NCR number
 document.addEventListener("DOMContentLoaded", function() {
-  // const ncrNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
-  // document.getElementById("ncrNumber").textContent = ncrNumber;
+   const ncrNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
+   document.getElementById("ncrNumber").textContent = ncrNumber;
 
   // For date
   const today = new Date();
   const formattedDate = today.toISOString().split('T')[0];
   document.getElementById("ncrDate").textContent = formattedDate;
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get references to elements
+  const radioYes = document.getElementById("Customer-notfi-NCR-yes");
+  const radioNo = document.getElementById("Customer-notfi-NCR-no");
+  const newNCRContainer = document.querySelector(".newNCRnum");
+  const newNCRSpan = document.getElementById("newNCRnumber");
+
+  // Function to generate and display a new NCR number
+  function generateNCRNumber() {
+      const newNCRNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
+      newNCRSpan.textContent = newNCRNumber; // Update the NCR number in the span
+  }
+
+  // Event listener for "Re-Inspected Acceptable?" radio buttons
+  radioYes.addEventListener("change", function () {
+      if (radioYes.checked) {
+          // If "Yes" is selected, hide the New NCR section
+          newNCRContainer.style.display = "none";
+      }
+  });
+
+  radioNo.addEventListener("change", function () {
+      if (radioNo.checked) {
+          // If "No" is selected, generate a new NCR number and show the section
+          generateNCRNumber(); // Generate and display the NCR number
+          newNCRContainer.style.display = "block"; // Show the New NCR section
+      }
+  });
+});
+
+
+
+
+
 
 // Validation
 function validateForm() {
@@ -168,6 +208,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+
+// Purchasing Section hide unhide.
+// Event listener for "Was a CAR raised?" question
+document.getElementById("CAR-yes").addEventListener("change", function () {
+  // Show the CAR number input and label
+  document.getElementById("CARnum-container").style.display = "block";
+});
+
+document.getElementById("CAR-no").addEventListener("change", function () {
+  // Hide the CAR number input and label
+  document.getElementById("CARnum-container").style.display = "none";
+});
+
+// Event listener for "Follow-up Required?" question
+document.getElementById("Followup-yes").addEventListener("change", function () {
+  // Show the follow-up type and expected date inputs
+  document.getElementById("followup-container").style.display = "block";
+});
+
+document.getElementById("Followup-no").addEventListener("change", function () {
+  // Hide the follow-up type and expected date inputs
+  document.getElementById("followup-container").style.display = "none";
+});
+
+
+
 
 
 

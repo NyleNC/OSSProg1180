@@ -891,6 +891,17 @@ label {
     width: 200px; 
 }
 
+
+.radio-group {
+    padding-bottom: 15px;
+}
+
+.radio-group label {
+    width: 200px;
+    font-weight: 500;
+    align-content: center;
+}
+
 /* For the text area to stay fixed. */
 [class^="form-ta-"] textarea {
     resize: vertical;

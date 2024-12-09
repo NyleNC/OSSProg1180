@@ -247,6 +247,88 @@
                 <button type="button" class="btnSave" style="display:none;" onclick="saveForm()">Save</button>
                 <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
             </div>
+
+
+            <!-- Purchasing Section -->
+        <div class="ncrSection">
+            <div class="ncrSection-title">Purchasing</div>
+            <form class="ncrSection-form" id="ncr-form" onsubmit="return validateForm()"> 
+                <fieldset class="enginerSection">
+                    <legend>Purchasing Portion</legend>
+                    <label for="pur-prelim-decision">Purchasing's Preliminary Decision: *</label><br><br>
+                    
+                    <div class="radio-group">
+                        <div class="left-radio">
+                            <input type="radio" id="returnToRew-Rep" name="return" value="returnToRew-Rep" checked disabled>
+                            <label for="returnToRew-Rep">Return to supplier for either "rework" or "replacement"</label>
+                
+                            <input type="radio" id="HBCreview" name="return" value="HBCreview" disabled>
+                            <label for="HBCreview">Defer for HBC Engineering Review</label><br>
+                        </div><br>
+                
+                        <div class="right-radio">
+                            <input type="radio" id="scrapInHouse" name="return" value="scrapInHouse" disabled>
+                            <label for="scrapInHouse"><strong>Scrap</strong> In-House</label>
+
+                            <input type="radio" id="rewInHouse" name="return" value="rewInHouse" disabled>
+                            <label for="rewInHouse"><strong>Rework</strong> In-House</label> 
+                        </div>
+                    </div>
+
+                    <p>Was a CAR raised? *</p>
+                    <label>
+                        <input type="radio" name="CARraised" id="CAR-yes" value="Yes" required checked disabled> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="CARraised" id="CAR-no" value="No" required disabled> No
+                    </label><br>
+                    <br>
+                    <div class="CARnum" id="CARnum-container">
+                        <label for="CARnum">CAR Number: *</label>
+                        <input type="text" id="CARnum" name="CARnum" class="size-css" value="456-546">
+                    </div><br>
+
+                    <p>Follow-up Required? *</p>
+                    <label>
+                        <input type="radio" name="Followup" id="Followup-yes" value="Yes" required checked disabled> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="Followup" id="Followup-no" value="No" required disabled> No
+                    </label><br><br>
+                    
+                    <div id="followup-container">
+                        <div class="followType">
+                            <label for="followType">Follow-up Type: *</label>
+                            <input type="text" id="followType" name="followType" class="size-css" value="Any Follow">
+                        </div><br>
+                        <div class="followDate">
+                            <label for="followDate">Expected Date: *</label>
+                            <input type="date" id="followDate" name="followDate" class="size-css" value="2024-12-12">
+                        </div>
+                    </div><br>
+                    <hr>
+                    <p>Re-Inspected Acceptable? *</p>
+                    <label>
+                        <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-yes" value="Yes" required checked disabled> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-no" value="No" required disabled> No
+                    </label><br><br>
+                    
+                    <div class="newNCRnum">
+                        <label for="newNCRnum">New NCR #:</label>
+                        <span id="newNCRnumber">NCR- </span>
+                    </div>
+                    <br><br>
+
+                    <div class="btnContainer">
+                        <button type="button" class="btnSave" style="display: none;" onclick="saveFormToStorage()">Save</button>
+                        <button type="submit" class="btnSubmit">Submit</button>
+                        <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </main>
 
     <div id="successPopup" class="popup" style="display:none;">
