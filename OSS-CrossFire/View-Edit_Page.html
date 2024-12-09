@@ -242,11 +242,7 @@
             </fieldset>
             </form>
 
-            <div class="btnContainer">
-                <button type="button" class="btnEdit" onclick="enableEdit(this)">Edit</button>
-                <button type="button" class="btnSave" style="display:none;" onclick="saveForm()">Save</button>
-                <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
-            </div>
+            
 
 
             <!-- Purchasing Section -->
@@ -299,11 +295,11 @@
                     <div id="followup-container">
                         <div class="followType">
                             <label for="followType">Follow-up Type: *</label>
-                            <input type="text" id="followType" name="followType" class="size-css" value="Any Follow">
+                            <input type="text" id="followType" name="followType" class="size-css" value="Any Follow" disabled>
                         </div><br>
                         <div class="followDate">
                             <label for="followDate">Expected Date: *</label>
-                            <input type="date" id="followDate" name="followDate" class="size-css" value="2024-12-12">
+                            <input type="date" id="followDate" name="followDate" class="size-css" value="2024-12-12" disabled>
                         </div>
                     </div><br>
                     <hr>
@@ -322,7 +318,8 @@
                     <br><br>
 
                     <div class="btnContainer">
-                        <button type="button" class="btnSave" style="display: none;" onclick="saveFormToStorage()">Save</button>
+                        <button type="button" class="btnEdit" onclick="enableEdit(this)">Edit</button>
+                        <button type="button" class="btnSave" style="display:none;" onclick="saveForm()">Save</button> &nbsp;&nbsp;
                         <button type="submit" class="btnSubmit">Submit</button>
                         <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
                     </div>

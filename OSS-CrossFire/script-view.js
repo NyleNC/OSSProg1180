@@ -31,31 +31,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Get references to elements
+
   const radioYes = document.getElementById("Customer-notfi-NCR-yes");
   const radioNo = document.getElementById("Customer-notfi-NCR-no");
   const newNCRContainer = document.querySelector(".newNCRnum");
   const newNCRSpan = document.getElementById("newNCRnumber");
 
-  // Function to generate and display a new NCR number
+
   function generateNCRNumber() {
       const newNCRNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
-      newNCRSpan.textContent = newNCRNumber; // Update the NCR number in the span
+      newNCRSpan.textContent = newNCRNumber; 
   }
 
-  // Event listener for "Re-Inspected Acceptable?" radio buttons
   radioYes.addEventListener("change", function () {
       if (radioYes.checked) {
-          // If "Yes" is selected, hide the New NCR section
           newNCRContainer.style.display = "none";
       }
   });
 
   radioNo.addEventListener("change", function () {
       if (radioNo.checked) {
-          // If "No" is selected, generate a new NCR number and show the section
-          generateNCRNumber(); // Generate and display the NCR number
-          newNCRContainer.style.display = "block"; // Show the New NCR section
+          generateNCRNumber();
+          newNCRContainer.style.display = "block"; 
       }
   });
 });
@@ -110,7 +107,22 @@ function enableEdit(button) {
   document.querySelector('.btnSave').style.display = 'inline-block';
 }
 
-function saveForm() {
+// function saveForm() {
+//   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
+//   inputs.forEach(input => {
+//       input.readOnly = true;
+//       if (input.type === 'checkbox') {
+//           input.disabled = true;
+//       }
+//   });
+
+//   document.querySelector('.btnSave').style.display = 'none';
+//   document.querySelector('.btnEdit').style.display = 'inline-block';
+
+//   document.getElementById('successPopup').style.display = 'flex';
+// }
+
+function saveForm() { 
   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
   inputs.forEach(input => {
       input.readOnly = true;
@@ -122,8 +134,14 @@ function saveForm() {
   document.querySelector('.btnSave').style.display = 'none';
   document.querySelector('.btnEdit').style.display = 'inline-block';
 
-  document.getElementById('successPopup').style.display = 'flex';
+  // Show a simple alert message
+  alert("Your inputs are saved for the future.");
 }
+
+
+
+
+
 /* -- For Forms --*/
 
 function saveRole() {
@@ -177,10 +195,8 @@ function enableDisableTextbox(e){
 function enaDisTextboxForEng(e) {
   const engDescription = document.getElementById("engEngineering");
 
-  // Disable the textarea by default
   engDescription.disabled = true;
 
-  // Enable the textarea only if "repair" or "rework" is selected
   if (e.id === "repair" || e.id === "rework") {
       engDescription.disabled = false;
   }
@@ -211,25 +227,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Purchasing Section hide unhide.
-// Event listener for "Was a CAR raised?" question
 document.getElementById("CAR-yes").addEventListener("change", function () {
-  // Show the CAR number input and label
   document.getElementById("CARnum-container").style.display = "block";
 });
 
 document.getElementById("CAR-no").addEventListener("change", function () {
-  // Hide the CAR number input and label
   document.getElementById("CARnum-container").style.display = "none";
 });
 
-// Event listener for "Follow-up Required?" question
 document.getElementById("Followup-yes").addEventListener("change", function () {
-  // Show the follow-up type and expected date inputs
   document.getElementById("followup-container").style.display = "block";
 });
 
 document.getElementById("Followup-no").addEventListener("change", function () {
-  // Hide the follow-up type and expected date inputs
   document.getElementById("followup-container").style.display = "none";
 });
 
@@ -249,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("input", function () {
       if (!isFormDirty) {
           isFormDirty = true;
-          saveButton.style.display = "inline-block"; // Show save button
+          saveButton.style.display = "inline-block"; 
       }
   });
 

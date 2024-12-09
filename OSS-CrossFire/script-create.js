@@ -23,6 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   })
 
+<<<<<<< Updated upstream
+=======
+
+  
+
+
+
+
+  
+>>>>>>> Stashed changes
 // For Saving a form.
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelectorAll("#ncr-form");
@@ -34,13 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
         element.addEventListener("input", function () {
             
             saveButton.style.display = "inline-block"; // Show save button
-        
-    });
+            });
+        });
     });
 
+<<<<<<< Updated upstream
   });
 
   /*login scripts*/
+=======
+/*login scripts*/
+>>>>>>> Stashed changes
 
   function saveRole() {
     const selectedRole = document.getElementById("roleInput").value;
@@ -117,4 +131,7 @@ function logout() {
     window.location.href = "login.html"; 
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
