@@ -23,14 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   })
 
-
-<<<<<<< Updated upstream
-  
-
-
-
-
-  
 // For Saving a form.
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelectorAll("#ncr-form");
@@ -46,14 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     });
 
-
-
-   
-  
-   
-
   });
-=======
+
   /*login scripts*/
 
   function saveRole() {
@@ -131,4 +117,4 @@ function logout() {
     window.location.href = "login.html"; 
 }
 
->>>>>>> Stashed changes
+
