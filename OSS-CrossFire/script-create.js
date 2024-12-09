@@ -23,3 +23,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   })
 
+
+  
+
+
+
+
+  
+// For Saving a form.
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelectorAll("#ncr-form");
+
+
+    form.forEach(element => {
+        const saveButton = element.querySelector(".btnSave");
+
+        element.addEventListener("input", function () {
+            
+            saveButton.style.display = "inline-block"; // Show save button
+        
+    });
+    });
+
+
+
+   
+  
+   
+
+  });
