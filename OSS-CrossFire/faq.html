@@ -6,7 +6,7 @@
     <title>CrossFireNCR</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script-ncr.js"></script>
 </head>
 <body>
     <header>
@@ -33,10 +33,13 @@
                 </div>
                 <div class="employee-info">
                     <i class='bx bxs-user bx-sm'></i>
-                    <p>Employee Name</p>
+                    <p id="user"> </p>
+                </div>
+                <div class="logDiv"> 
+                    <button class="button" id="logout" onclick="logout()">Logout</button>
                 </div>
             </div>
-                
+         
             </div>
         </div>
 
@@ -67,7 +70,7 @@
             </div>
         </nav>
     </header>
-<main>
+
 <div class="faq-content">
     <h1>FAQ</h1>
  
@@ -120,3 +123,4 @@
     <p>&copy; 2024 Crossfire. All Rights Reserved.</p>
 </footer>
     </body>
+</html>

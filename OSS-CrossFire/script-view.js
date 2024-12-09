@@ -16,14 +16,51 @@ document.addEventListener('DOMContentLoaded', function() {
 /* -- For Forms --*/
 // For NCR number
 document.addEventListener("DOMContentLoaded", function() {
-  const ncrNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
-  document.getElementById("ncrNumber").textContent = ncrNumber;
+   const ncrNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
+   document.getElementById("ncrNumber").textContent = ncrNumber;
 
   // For date
   const today = new Date();
   const formattedDate = today.toISOString().split('T')[0];
   document.getElementById("ncrDate").textContent = formattedDate;
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const radioYes = document.getElementById("Customer-notfi-NCR-yes");
+  const radioNo = document.getElementById("Customer-notfi-NCR-no");
+  const newNCRContainer = document.querySelector(".newNCRnum");
+  const newNCRSpan = document.getElementById("newNCRnumber");
+
+
+  function generateNCRNumber() {
+      const newNCRNumber = `NCR-${Math.floor(1000 + Math.random() * 9999)}`;
+      newNCRSpan.textContent = newNCRNumber; 
+  }
+
+  radioYes.addEventListener("change", function () {
+      if (radioYes.checked) {
+          newNCRContainer.style.display = "none";
+      }
+  });
+
+  radioNo.addEventListener("change", function () {
+      if (radioNo.checked) {
+          generateNCRNumber();
+          newNCRContainer.style.display = "block"; 
+      }
+  });
+});
+
+
+
+
+
 
 // Validation
 function validateForm() {
@@ -55,19 +92,37 @@ function goBack() {
   window.history.back();
 }
 
-function enableEdit() {
+function enableEdit(button) {
+  console.log("Edit button clicked!")
   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea, #ncrSor, #ncrWip');
   inputs.forEach(input => {
       input.readOnly = false;
       if (input.type === 'radio') {
           input.disabled = false;
       }
+  button.style.display = "none";
+  document.querySelector('.btnSave').style.display = 'inline-block';
   });
 
   document.querySelector('.btnSave').style.display = 'inline-block';
 }
 
-function saveForm() {
+// function saveForm() {
+//   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
+//   inputs.forEach(input => {
+//       input.readOnly = true;
+//       if (input.type === 'checkbox') {
+//           input.disabled = true;
+//       }
+//   });
+
+//   document.querySelector('.btnSave').style.display = 'none';
+//   document.querySelector('.btnEdit').style.display = 'inline-block';
+
+//   document.getElementById('successPopup').style.display = 'flex';
+// }
+
+function saveForm() { 
   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
   inputs.forEach(input => {
       input.readOnly = true;
@@ -77,9 +132,16 @@ function saveForm() {
   });
 
   document.querySelector('.btnSave').style.display = 'none';
+  document.querySelector('.btnEdit').style.display = 'inline-block';
 
-  document.getElementById('successPopup').style.display = 'flex';
+  // Show a simple alert message
+  alert("Your inputs are saved for the future.");
 }
+
+
+
+
+
 /* -- For Forms --*/
 
 function saveRole() {
@@ -103,7 +165,13 @@ function loadSelectedRole() {
 window.addEventListener("load", loadSelectedRole);
 
 
-document.getElementById("roleInput").addEventListener("change", saveRole);
+const roleInput = document.getElementById("roleInput");
+
+if (roleInput) {
+  roleInput.addEventListener("change", saveRole);
+} else {
+  console.log("Element with id 'roleInput' not found.");
+}
 
 
 //
@@ -127,10 +195,8 @@ function enableDisableTextbox(e){
 function enaDisTextboxForEng(e) {
   const engDescription = document.getElementById("engEngineering");
 
-  // Disable the textarea by default
   engDescription.disabled = true;
 
-  // Enable the textarea only if "repair" or "rework" is selected
   if (e.id === "repair" || e.id === "rework") {
       engDescription.disabled = false;
   }
@@ -160,6 +226,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Purchasing Section hide unhide.
+document.getElementById("CAR-yes").addEventListener("change", function () {
+  document.getElementById("CARnum-container").style.display = "block";
+});
+
+document.getElementById("CAR-no").addEventListener("change", function () {
+  document.getElementById("CARnum-container").style.display = "none";
+});
+
+document.getElementById("Followup-yes").addEventListener("change", function () {
+  document.getElementById("followup-container").style.display = "block";
+});
+
+document.getElementById("Followup-no").addEventListener("change", function () {
+  document.getElementById("followup-container").style.display = "none";
+});
+
+
+
+
+
 
 
 // For Saving a form.
@@ -172,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("input", function () {
       if (!isFormDirty) {
           isFormDirty = true;
-          saveButton.style.display = "inline-block"; // Show save button
+          saveButton.style.display = "inline-block"; 
       }
   });
 

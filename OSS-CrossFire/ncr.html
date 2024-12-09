@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrossFireNCR</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="script-ncr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-<body>
+<body>  
     <header>
         <div class="global-header">
             <div class="logo">
@@ -17,7 +21,7 @@
             <div class="global-selection">
                 <div class="notifications">
                     <input type="checkbox" id="notification-toggle" class="toggle-checkbox-notif"/>
-                    <label for="notification-toggle" class="bell"><i class='bx bx-bell bx-sm'></i></label>
+                   
                     
                     <div class="notification-box">
                         <div class="notification-box-title">Notifications</div>
@@ -31,9 +35,13 @@
                    
                     </div>
                 </div>
-                <div class="employee-info">
+                <div class="employee-info">  
                     <i class='bx bxs-user bx-sm'></i>
-                    <p>Employee Name</p>
+                    <p id="user"> </p>
+                </div>
+                <div class="logDiv"> 
+            
+                    <button class="button" id="logout" onclick="logout()">Logout</button>
                 </div>
             </div>
            
@@ -71,23 +79,87 @@
         </nav>
     </header>
     <main class="ncr-main">
-    <div class="sidebar">
-        <h1>Filters</h1>
+    <div class="filterbar">
         <div class="filters">
-            <h2>Groups</h2>
-            <input type="checkbox" id="roleQualityRep" name="roleQualityRep" value="chkQualityRep">
-            <label for="roleQualityRep">Quality Rep</label><br><br>
-            <input type="checkbox" id="roleEngineer" name="roleEngineer" value="chkEngineer">
-            <label for="roleEngineer">Engineer</label><br><br>
-
-            <h2>NCRs</h2>
-            <input type="checkbox" id="ncrAssignedUser" name="ncrAssignedUser" value="chkAssignedUser">
-            <label for="ncrAssignedUser">Assigned to Me</label><br><br>
-            <input type="checkbox" id="ncrAssignedGroup" name="ncrAssignedGroup" value="chkAssignedGroup">
-            <label for="ncrAssignedGroup">Assigned to Role</label><br><br>
-            <input type="checkbox" id="ncrAssignedAll" name="ncrAssignedAll" value="chkAssignedAll">
-            <label for="ncrAssignedAll">Assigned to All</label><br><br>
+            <h1>Filter By:</h1>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Department
+                </button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="QualityRep" name="QualityRep"/>
+                        <label for="QualityRep">Quality Rep</label>
+                    </div>
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="Engineer" name="Engineer"/>
+                        <label for="Engineer">Engineer</label>
+                    </div>
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="Purchasing" name="Purchasing"/>
+                        <label for="Purchasing">Purchasing</label>
+                    </div>
+                </div>
+              </div>
             </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Supplier
+                </button>
+                
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="ApexSupply" name="ApexSupply"/>
+                        <label for="ApexSupply">Apex Supply Co.</label>
+                    </div>
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="SilverStar" name="SilverStar"/>
+                        <label for="SilverStar">Silver Star Trading</label>
+                    </div>
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="QuantomRes" name="QuantomRes"/>
+                        <label for="QuantomRes">Quantom Resources</label>
+                    </div>
+                    
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="CrimsonLogistics" name="CrimsonLogistics"/>
+                        <label for="CrimsonLogistics">Crimson Logistics</label>
+                    </div>
+                  
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="HroizonGoods" name="HroizonGoods"/>
+                        <label for="HroizonGoods">Horizon Goods Inc.</label>
+                    </div>
+            
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="GlobalLink" name="GlobalLink"/>
+                        <label for="GlobalLink">Global Link</label>
+                    </div>
+                
+                  
+                </div>
+            </div>
+              
+        
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Status
+                </button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="ActiveStatus" name="ActiveStatus"/>
+                        <label for="ActiveStatus">Active</label>
+                    </div>
+                    <div class="dropdown-item">
+                        <input  type="checkbox" id="CloseStatus" name="CloseStatus"/>
+                        <label for="CloseStatus">Closed</label>
+                    </div>
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
     </div>
 
     <div class="column-1">
@@ -116,9 +188,9 @@
                         <td>Industrial Machinery Parts</td>
                         <td>2022-03-13</td>
                         <td>2024-11-05</td>
-                        <td><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <img src="img/edit.png"><a href="" onclick="window.open('View-Edit_Page.html', 'SAMPLE',
+                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;"> Edit</a></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -128,9 +200,7 @@
                         <td>Organic Produce</td>
                         <td>2020-12-30</td>
                         <td>2021-09-27</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -140,9 +210,7 @@
                         <td>Natural Cleaning Products</td>
                         <td>2021-11-04</td>
                         <td>2022-02-14</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> |  <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -152,9 +220,7 @@
                         <td>Electronics Components</td>
                         <td>2023-08-19</td>
                         <td>2023-09-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -164,9 +230,7 @@
                         <td>Marine Equipment</td>
                         <td>2021-06-22</td>
                         <td>2021-09-27</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -176,9 +240,7 @@
                         <td>Automotive Parts</td>
                         <td>2022-03-25</td>
                         <td>2022-06-22</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>7</td>
@@ -188,9 +250,7 @@
                         <td>Fashion Accessories</td>
                         <td>2023-01-10</td>
                         <td>2023-03-15</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>8</td>
@@ -200,9 +260,7 @@
                         <td>Renewable Energy Solutions</td>
                         <td>2021-05-20</td>
                         <td>2021-10-05</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>9</td>
@@ -212,9 +270,7 @@
                         <td>Home Appliances</td>
                         <td>2023-02-25</td>
                         <td>2023-07-12</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>10</td>
@@ -224,9 +280,7 @@
                         <td>IT Networking Equipment</td>
                         <td>2023-04-15</td>
                         <td>2023-04-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>11</td>
@@ -236,9 +290,7 @@
                         <td>Outdoor Adventure Gear</td>
                         <td>2022-08-05</td>
                         <td>2023-01-20</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>12</td>
@@ -248,9 +300,7 @@
                         <td>Natural Cleaning Products</td>
                         <td>2021-07-15</td>
                         <td>2022-01-25</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>13</td>
@@ -260,9 +310,7 @@
                         <td>Consumer Electronics</td>
                         <td>2023-01-10</td>
                         <td>2023-06-15</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>14</td>
@@ -272,9 +320,7 @@
                         <td>Shipping and Freight</td>
                         <td>2023-03-22</td>
                         <td>2023-08-01</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>15</td>
@@ -284,9 +330,7 @@
                         <td>Sports Equipment</td>
                         <td>2022-09-15</td>
                         <td>2023-05-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>16</td>
@@ -296,9 +340,7 @@
                         <td>Organic Food Products</td>
                         <td>2020-06-01</td>
                         <td>2022-10-10</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>17</td>
@@ -308,9 +350,7 @@
                         <td>Software Development</td>
                         <td>2023-05-01</td>
                         <td>2023-11-15</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>18</td>
@@ -320,9 +360,7 @@
                         <td>Home Audio Systems</td>
                         <td>2023-06-10</td>
                         <td>2023-09-20</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>19</td>
@@ -332,9 +370,7 @@
                         <td>Industrial Supplies</td>
                         <td>2021-04-20</td>
                         <td>2023-02-12</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>20</td>
@@ -344,10 +380,8 @@
                         <td>Clothing and Apparel</td>
                         <td>2019-11-05</td>
                         <td>2022-03-18</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
-                    </tr>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
+                    </tr> 
                     <tr>
                         <td>21</td>
                         <td>Active</td>
@@ -356,9 +390,7 @@
                         <td>Online Marketing</td>
                         <td>2023-01-15</td>
                         <td>2023-08-20</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><img src="img/search-file (1).png"><a>View</a> | <img src="img/edit.png"><a> Edit</a></td>
                     </tr>
                     <tr>
                         <td>22</td>
@@ -368,9 +400,7 @@
                         <td>Gardening Supplies</td>
                         <td>2023-02-10</td>
                         <td>2023-09-10</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>23</td>
@@ -380,9 +410,7 @@
                         <td>Consulting Services</td>
                         <td>2023-03-01</td>
                         <td>2023-12-31</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>24</td>
@@ -392,9 +420,7 @@
                         <td>Health Supplements</td>
                         <td>2021-05-22</td>
                         <td>2022-05-01</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>25</td>
@@ -404,9 +430,7 @@
                         <td>Renewable Energy</td>
                         <td>2022-08-15</td>
                         <td>2023-10-01</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>26</td>
@@ -416,9 +440,7 @@
                         <td>Film Production</td>
                         <td>2023-04-20</td>
                         <td>2023-10-20</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>27</td>
@@ -428,9 +450,7 @@
                         <td>Food Manufacturing</td>
                         <td>2023-01-30</td>
                         <td>2023-11-15</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>28</td>
@@ -440,9 +460,7 @@
                         <td>Import/Export</td>
                         <td>2020-12-05</td>
                         <td>2022-08-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>29</td>
@@ -452,9 +470,7 @@
                         <td>IT Services</td>
                         <td>2022-09-01</td>
                         <td>2023-12-01</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>30</td>
@@ -464,9 +480,7 @@
                         <td>Business Strategy</td>
                         <td>2023-05-10</td>
                         <td>2023-11-20</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>31</td>
@@ -476,9 +490,7 @@
                         <td>Artificial Intelligence</td>
                         <td>2023-06-15</td>
                         <td>2024-01-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>32</td>
@@ -488,9 +500,7 @@
                         <td>Marine Equipment</td>
                         <td>2019-03-18</td>
                         <td>2022-05-25</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>33</td>
@@ -500,9 +510,7 @@
                         <td>Pharmaceuticals</td>
                         <td>2022-11-10</td>
                         <td>2023-09-15</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>34</td>
@@ -512,9 +520,7 @@
                         <td>Fashion Design</td>
                         <td>2023-03-15</td>
                         <td>2023-10-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>35</td>
@@ -524,9 +530,7 @@
                         <td>Fitness Equipment</td>
                         <td>2023-02-20</td>
                         <td>2023-12-31</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>36</td>
@@ -536,9 +540,7 @@
                         <td>Building Materials</td>
                         <td>2020-07-15</td>
                         <td>2022-04-12</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>37</td>
@@ -548,9 +550,7 @@
                         <td>Travel Services</td>
                         <td>2023-04-01</td>
                         <td>2023-09-15</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>38</td>
@@ -560,9 +560,7 @@
                         <td>Real Estate</td>
                         <td>2023-05-22</td>
                         <td>2023-11-01</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>39</td>
@@ -572,9 +570,7 @@
                         <td>Tech Solutions</td>
                         <td>2023-06-10</td>
                         <td>2024-01-05</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                     <tr>
                         <td>40</td>
@@ -584,9 +580,7 @@
                         <td>Event Management</td>
                         <td>2021-02-14</td>
                         <td>2022-11-30</td>
-                        <td><a href="ncr.html" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">View</a> | <a href="" onclick="window.open(this.href, 'SAMPLE',
-                            'left=280,top=270,width=1400,height=600,toolbar=1,resizable=0'); return false;">Edit</a></td>
+                        <td><a>View</a> | <a>Edit</a></td>
                     </tr>
                 
                 </tbody>
