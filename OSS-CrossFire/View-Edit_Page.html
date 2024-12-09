@@ -273,23 +273,23 @@
 
                     <p>Was a CAR raised? *</p>
                     <label>
-                        <input type="radio" name="CARraised" id="CAR-yes" value="Yes" required checked disabled> Yes
+                        <input type="radio" name="CARraised" id="CAR-yes" value="Yes" onclick="toggleCARInput(this)" required checked disabled> Yes
                     </label>
                     <label>
-                        <input type="radio" name="CARraised" id="CAR-no" value="No" required disabled> No
+                        <input type="radio" name="CARraised" id="CAR-no" value="No" onclick="toggleCARInput(this)" required disabled> No
                     </label><br>
                     <br>
                     <div class="CARnum" id="CARnum-container">
-                        <label for="CARnum">CAR Number: *</label>
-                        <input type="text" id="CARnum" name="CARnum" class="size-css" value="456-546">
+                        <label for="CARnum">CAR Number: *</label>&nbsp;&nbsp;
+                        <input type="text" id="CARnum" name="CARnum" class="size-css" value="456-546" disabled>
                     </div><br>
 
                     <p>Follow-up Required? *</p>
                     <label>
-                        <input type="radio" name="Followup" id="Followup-yes" value="Yes" required checked disabled> Yes
+                        <input type="radio" name="Followup" id="Followup-yes" value="Yes" onclick="toggleFollowupInput(this)" required checked disabled> Yes
                     </label>
                     <label>
-                        <input type="radio" name="Followup" id="Followup-no" value="No" required disabled> No
+                        <input type="radio" name="Followup" id="Followup-no" value="No" onclick="toggleFollowupInput(this)" required disabled> No
                     </label><br><br>
                     
                     <div id="followup-container">
@@ -305,26 +305,25 @@
                     <hr>
                     <p>Re-Inspected Acceptable? *</p>
                     <label>
-                        <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-yes" value="Yes" required checked disabled> Yes
+                        <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-yes" value="Yes" onclick="toggleNCRNumber(this)" required checked disabled> Yes
                     </label>
                     <label>
-                        <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-no" value="No" required disabled> No
+                        <input type="radio" name="notificationOfNCR" id="Customer-notfi-NCR-no" value="No" onclick="toggleNCRNumber(this)" required disabled> No
                     </label><br><br>
                     
                     <div class="newNCRnum">
                         <label for="newNCRnum">New NCR #:</label>
-                        <span id="newNCRnumber">NCR- </span>
+                        <span id="newNCRnumber">NCR-6260 </span>
                     </div>
                     <br><br>
-
-                    <div class="btnContainer">
-                        <button type="button" class="btnEdit" onclick="enableEdit(this)">Edit</button>
-                        <button type="button" class="btnSave" style="display:none;" onclick="saveForm()">Save</button> &nbsp;&nbsp;
-                        <button type="submit" class="btnSubmit">Submit</button>
-                        <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
-                    </div>
                 </fieldset>
             </form>
+            <div class="btnContainer">
+                <button type="button" class="btnEdit" onclick="enableEdit(this)">Edit</button>
+                <button type="button" class="btnSave" style="display:none;" onclick="saveForm()">Save</button> &nbsp;&nbsp;
+                <button type="submit" class="btnSubmit">Submit</button>
+                <button type="button" class="btnCancel" onclick="goBack()">Cancel</button>
+            </div>
         </div>
     </main>
 

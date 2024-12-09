@@ -97,6 +97,7 @@ function enableEdit(button) {
   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea, #ncrSor, #ncrWip');
   inputs.forEach(input => {
       input.readOnly = false;
+      input.disabled = false;
       if (input.type === 'radio') {
           input.disabled = false;
       }
@@ -107,7 +108,22 @@ function enableEdit(button) {
   document.querySelector('.btnSave').style.display = 'inline-block';
 }
 
-// function saveForm() {
+function saveForm() {
+    const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
+   inputs.forEach(input => {
+       input.readOnly = true;
+       if (input.type === 'checkbox') {
+           input.disabled = true;
+       }
+   });
+
+   document.querySelector('.btnSave').style.display = 'none';
+   document.querySelector('.btnEdit').style.display = 'inline-block';
+
+   document.getElementById('successPopup').style.display = 'flex';
+}
+
+// function saveForm() { 
 //   const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
 //   inputs.forEach(input => {
 //       input.readOnly = true;
@@ -119,24 +135,9 @@ function enableEdit(button) {
 //   document.querySelector('.btnSave').style.display = 'none';
 //   document.querySelector('.btnEdit').style.display = 'inline-block';
 
-//   document.getElementById('successPopup').style.display = 'flex';
+//   // Show a simple alert message
+//   alert("Your inputs are saved for the future.");
 // }
-
-function saveForm() { 
-  const inputs = document.querySelectorAll('#ncr-form input, #ncr-form select, #ncr-form textarea');
-  inputs.forEach(input => {
-      input.readOnly = true;
-      if (input.type === 'checkbox') {
-          input.disabled = true;
-      }
-  });
-
-  document.querySelector('.btnSave').style.display = 'none';
-  document.querySelector('.btnEdit').style.display = 'inline-block';
-
-  // Show a simple alert message
-  alert("Your inputs are saved for the future.");
-}
 
 
 
@@ -227,21 +228,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Purchasing Section hide unhide.
-document.getElementById("CAR-yes").addEventListener("change", function () {
-  document.getElementById("CARnum-container").style.display = "block";
-});
+function toggleCARInput(e) {
+  const carContainer = document.getElementById('CARnum-container');
+  carContainer.style.display = e.id === 'CAR-yes' ? 'block' : 'none';
+}
 
-document.getElementById("CAR-no").addEventListener("change", function () {
-  document.getElementById("CARnum-container").style.display = "none";
-});
+function toggleFollowupInput(e) {
+  const followupContainer = document.getElementById('followup-container');
+  followupContainer.style.display = e.id === 'Followup-yes' ? 'block' : 'none';
+}
 
-document.getElementById("Followup-yes").addEventListener("change", function () {
-  document.getElementById("followup-container").style.display = "block";
-});
-
-document.getElementById("Followup-no").addEventListener("change", function () {
-  document.getElementById("followup-container").style.display = "none";
-});
+// Toggle for New NCR number.
+function toggleNCRNumber(e) {
+  const newNCRnumContainer = document.getElementById('newNCRnumber');
+  newNCRnumContainer.style.display = e.id === 'Customer-notfi-NCR-yes' ? 'inline' : 'none';
+}
 
 
 
