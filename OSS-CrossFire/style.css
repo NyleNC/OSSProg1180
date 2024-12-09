@@ -179,32 +179,80 @@
     margin-left: auto;
 }
 
-.sidebar{
+.filterbar{
    
-    background-color: #173451; 
+    border:5px solid #8fb4d8; 
     color: white;
-    padding-top: 20px;
-    padding-left: 40px;
+    margin: 1.5em 20em 1em;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px 15px 
 }
 
-.sidebar h1{
-    width: 85%;
-    font-weight: lighter;
-    border-bottom: 2px solid #E3E7F2;
-}
 
-.filters h2{
+.filterbar h1{
     font-weight: bold;
-    margin-top: 30px;
-    font-size: 1.4em;
-    border-bottom: none;
+    margin: 0 auto;
+    color: rgb(1, 52, 78);
+    font-size: 22px;
+    display: inline-block;
+    margin-right: 15px;
 }
 
+.btn-group{
+    margin-right: 15px;
+}
+
+.dropdown-menu{
+  
+    border:5px solid #8fb4d8; 
+    overflow-x: auto;
+    max-height: fit-content;
+}
 .filters{
-    font-size: 0.8em;
+    font-size: 1em;
     white-space: nowrap;
+    display: inline-block;
 }
 
+
+
+.filter-box-selection {
+    width : auto; 
+    background: #d9d9d9;
+    display: inline-block
+  }
+  
+  .filter-box-selection span {
+    padding : 10px 20px;
+    background : #2d2f31; 
+    color : white;  
+    font-size : 1em;
+    font-variant : small-caps;
+    cursor : pointer;
+    display: inline-block;
+  }
+  
+  filter-box-selection span::after {
+    float: right;
+    right: 10%;
+    content: "+";
+  }
+  
+  .slide {
+    clear:both;
+    width:100%;
+    height:0px;
+    overflow: hidden;
+    text-align: left;
+    transition: height .4s ease;
+  }
+  
+  .slide li {padding : 30px;}
+  
+  #touch {position: absolute; opacity: 0; height: 0px;}    
+  
+  #touch:checked + .slide {height: 300px;} 
 
 input[type='checkbox'] {
     appearance: none;           /* Changed because there was no difference. */
@@ -288,8 +336,10 @@ input::-webkit-calendar-picker-indicator {
     border-bottom: 1px solid black;
 }
 
-.ncr-table-body td {
-    padding-right: 5em;
+.ncr-table-body td
+{
+padding-right: 3em;
+padding-left: 0.5em;
 }
 
 .pagination {
@@ -330,12 +380,15 @@ input::-webkit-calendar-picker-indicator {
   }
 
 .column-1 {
-    display: block;
-    margin-bottom:80px;
-    margin-right: 30px;
-    margin-left: 30px;
+    display: flex;
+    margin : 0 12.5em 80px;
+    padding: 0
+
 
 }
+
+
+
 
 .ncr-footer{
     display: block;
@@ -370,25 +423,37 @@ main{
 }
 
 .row1-ncr{
-    padding:0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 50px;
-    border: 1px solid black;
     border-radius: 1.5em;
-    margin-top: 1em;
-    margin-right: 0;
-    margin-bottom: auto;
+    margin-bottom: 5px;
+    overflow: hidden;
+    background-color: #f9f9f9;
 }
 
+.row1-ncr h2{
+    color: rgb(1, 52, 78);
+    font-size: 20px; 
+    padding: 20px;
+    margin-top: 0;
+    margin-left: 0;
+    font-weight: bold;
+    background-color: #73b4f9;
+    border-top-right-radius: auto;
+    border-top-left-radius: auto;
+    margin-bottom: 20px;
+    display: flex;
+}
 
-
-table {
+.row1-ncr table {
     width: 100%;
-    overflow-x: auto;
     white-space: nowrap;
     text-align: left;
 }
+
+.ncr-table-all{
+    background-color: #f9f9f9;
+    padding: 0 2em;
+}
+
 
 td, th {
     padding: 5px;
@@ -409,7 +474,10 @@ td, th {
     display: block;
     overflow-x: scroll;
     white-space: nowrap;
+    padding-left: 2em
   }
+
+  
 
 /* scrollbar style */
 ::-webkit-scrollbar {
@@ -728,7 +796,7 @@ opacity: 100;
 
 .ncr-main{
     display: grid;
-    grid-template-columns: 18% 82%;
+    grid-template-columns: 1fr;    
 }
 
 footer {
